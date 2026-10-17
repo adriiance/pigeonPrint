@@ -6,8 +6,35 @@ A full-stack web platform for print shops, built with **Angular 20**, **Node.js/
 
 ## Screenshots
 
-<!-- Add 3-5 screenshots to /docs/screenshots and link them here, e.g.: -->
-<!-- ![Home page](docs/screenshots/home.png) -->
+### Clients and public pages
+
+| Home: top 5 products | Catalogue with search, filter and sorting |
+|---|---|
+| ![Home](docs/screenshots/01-home-top5.png) | ![Catalogue](docs/screenshots/02-catalogue.png) |
+
+| Product details with gallery | Print shop map, colors and print services |
+|---|---|
+| ![Product details](docs/screenshots/03-product-details.png) | ![Map and options](docs/screenshots/04-map-and-options.png) |
+
+| Shopping cart grouped by print shop | Orders and statuses |
+|---|---|
+| ![Cart](docs/screenshots/05-cart.png) | ![Client orders](docs/screenshots/06-client-orders.png) |
+
+### Company clients
+
+![Public procurement](docs/screenshots/07-procurement.png)
+
+### Print shops
+
+| Incoming orders and status flow | Add a new product |
+|---|---|
+| ![Printer orders](docs/screenshots/08-printer-orders.png) | ![Add product](docs/screenshots/09-add-product.png) |
+
+![Colors and print services](docs/screenshots/10-add-product-options.png)
+
+### Administrator
+
+![Admin panel](docs/screenshots/11-admin.png)
 
 ## Features
 
