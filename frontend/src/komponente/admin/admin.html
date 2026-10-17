@@ -1,0 +1,328 @@
+<div class="admin-page">
+  <header class="topbar">
+    <a class="brand" routerLink="/pocetna">
+      <img src="products/pigeon.png" alt="PigeonPrint golub" class="brand-pigeon">
+      <div>
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-subtitle">administratorska tabla</span>
+      </div>
+    </a>
+
+   <div class="admin-header-actions">
+
+  <div class="admin-badge">
+    <span class="admin-dot"></span>
+    <div>
+      <small>Prijavljeni administrator</small>
+      <strong>@{{ korisnicko_ime }}</strong>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="logout-btn"
+    (click)="logout()">
+    Odjavi se
+  </button>
+
+</div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PIGEONPRINT / ADMIN</span>
+        <h1>Upravljanje korisnicima</h1>
+        <p>Pregledaj zahteve za registraciju i upravljaj aktivnim korisničkim nalozima.</p>
+      </div>
+      <div class="hero-stamp">ADMIN</div>
+    </section>
+
+    @if (poruka) {
+      <div class="message">{{ poruka }}</div>
+    }
+
+    <section class="panel requests-panel">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">ČEKAJU ODLUKU</span>
+          <h2>Zahtevi za registraciju</h2>
+        </div>
+        <span class="count-badge">{{ neodobreniKorisnici.length }}</span>
+      </div>
+
+      @if (neodobreniKorisnici.length === 0) {
+        <div class="empty-state">
+          <span class="empty-icon">✓</span>
+          <div>
+            <strong>Nema novih zahteva</strong>
+            <p>Svi pristigli zahtevi za registraciju su obrađeni.</p>
+          </div>
+        </div>
+      } @else {
+
+        <div class="request-grid">
+
+          @for (k of neodobreniKorisnici; track k.korisnicko_ime) {
+
+            <article class="request-card">
+
+              <!-- GORNJI RED -->
+              <div class="request-top-row">
+
+                <!-- KORISNIK LEVO -->
+                <div class="user-summary">
+                  <img
+                    class="avatar"
+                    [src]="'http://localhost:4000/pics/' + (k.profilna || 'default_profile_image.jpg')"
+                    alt="Profilna slika korisnika">
+
+                  <div class="user-title">
+                    <h3>{{ k.ime }} {{ k.prezime }}</h3>
+                    <span>@{{ k.korisnicko_ime }}</span>
+                  </div>
+                </div>
+
+                <!-- TIP U SREDINI -->
+                <span class="type-pill">
+                  {{
+                    k.tip === 'stampar'
+                      ? 'Štampar'
+                      : (k.podtip === 'pravno_lice'
+                          ? 'Pravno lice'
+                          : 'Fizičko lice')
+                  }}
+                </span>
+
+                <!-- DUGMIĆI DESNO -->
+                <div class="request-actions">
+                  <button
+                    class="btn btn-accept"
+                    type="button"
+                    (click)="prihvatiRegistraciju(k.korisnicko_ime)">
+                    Prihvati
+                  </button>
+
+                  <button
+                    class="btn btn-reject"
+                    type="button"
+                    (click)="odbijRegistraciju(k.korisnicko_ime)">
+                    Odbij
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- PODACI ISPOD -->
+              <!-- <div class="details-grid">
+
+                <div>
+                  <span>Mejl</span>
+                  <strong>{{ k.mejl }}</strong>
+                </div>
+
+                <div>
+                  <span>Telefon</span>
+                  <strong>{{ k.telefon }}</strong>
+                </div>
+
+                @if (k.podtip === 'pravno_lice' || k.tip === 'stampar') {
+
+                  <div>
+                    <span>Institucija</span>
+                    <strong>{{ k.naziv_institucije || '—' }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Grad</span>
+                    <strong>{{ k.grad || '—' }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Adresa sedišta</span>
+                    <strong>{{ k.adresa_sedista || '—' }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Matični broj</span>
+                    <strong>{{ k.maticni_broj || '—' }}</strong>
+                  </div>
+
+                  <div>
+                    <span>PIB</span>
+                    <strong>{{ k.pib || '—' }}</strong>
+                  </div>
+
+                }
+
+              </div> -->
+
+            </article>
+
+          }
+
+        </div>
+
+      }
+    </section>
+
+
+    <!-- AKTIVNI KORISNICI -->
+
+    <section class="panel users-panel">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">AKTIVNI NALOZI</span>
+          <h2>Korisnici sistema</h2>
+        </div>
+      </div>
+
+      <div class="users-list">
+
+        @for (k of odobreniKorisnici; track k.korisnicko_ime) {
+
+          @if (k.tip !== 'admin') {
+
+            <article class="user-card">
+
+              <div class="user-card-header">
+
+                <div class="user-summary">
+
+                  <img
+                    class="avatar avatar-large"
+                    [src]="'http://localhost:4000/pics/' + (k.profilna || 'default_profile_image.jpg')"
+                    alt="Profilna slika korisnika">
+
+                  <div class="user-title">
+                    <h3>{{ k.ime }} {{ k.prezime }}</h3>
+                    <span>@{{ k.korisnicko_ime }}</span>
+                  </div>
+
+                </div>
+
+                <span class="type-pill active-pill">
+                  {{
+                    k.tip === 'stampar'
+                      ? 'Štampar'
+                      : (k.podtip === 'pravno_lice'
+                          ? 'Pravno lice'
+                          : 'Fizičko lice')
+                  }}
+                </span>
+
+              </div>
+
+
+              <!-- IZMENA PODATAKA -->
+
+              <div class="edit-grid">
+
+                <label>
+                  <span>Ime</span>
+                  <input type="text" [(ngModel)]="k.ime">
+                </label>
+
+                <label>
+                  <span>Prezime</span>
+                  <input type="text" [(ngModel)]="k.prezime">
+                </label>
+
+                <label>
+                  <span>Mejl</span>
+                  <input type="email" [(ngModel)]="k.mejl">
+                </label>
+
+                <label>
+                  <span>Telefon</span>
+                  <input type="text" [(ngModel)]="k.telefon">
+                </label>
+
+                @if (k.podtip === 'pravno_lice' || k.tip === 'stampar') {
+
+                  <label>
+                    <span>Naziv institucije</span>
+                    <input type="text" [(ngModel)]="k.naziv_institucije">
+                  </label>
+
+                  <label>
+                    <span>Grad</span>
+                    <input type="text" [(ngModel)]="k.grad">
+                  </label>
+
+                  <label class="wide-field">
+                    <span>Adresa sedišta</span>
+                    <input type="text" [(ngModel)]="k.adresa_sedista">
+                  </label>
+
+                  <label>
+                    <span>Matični broj</span>
+                    <input type="text" [(ngModel)]="k.maticni_broj">
+                  </label>
+
+                  <label>
+                    <span>PIB</span>
+                    <input type="text" [(ngModel)]="k.pib">
+                  </label>
+
+                }
+
+              </div>
+
+
+              <!-- PROFILNA -->
+
+              <div class="profile-photo-row">
+
+                <div>
+                  <strong>Profilna slika</strong>
+                  <span>Administrator može da je vrati na podrazumevanu.</span>
+                </div>
+
+                <button
+                  class="btn btn-secondary"
+                  type="button"
+                  (click)="ukloniSlikuKorisniku(k.korisnicko_ime)">
+                  Vrati default
+                </button>
+
+              </div>
+
+
+              <!-- AKCIJE -->
+
+              <div class="card-actions user-actions">
+
+                <button
+                  class="btn btn-save"
+                  type="button"
+                  (click)="azurirajKorisnika(k.korisnicko_ime)">
+                  Sačuvaj izmene
+                </button>
+
+                <button
+                  class="btn btn-delete"
+                  type="button"
+                  (click)="obrisiKorisnika(k.korisnicko_ime)">
+                  Obriši nalog
+                </button>
+
+              </div>
+
+            </article>
+
+          }
+
+        }
+
+      </div>
+
+    </section>
+
+  </main>
+   <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

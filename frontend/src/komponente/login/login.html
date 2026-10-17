@@ -1,0 +1,103 @@
+<div class="login-page">
+  <header class="site-header">
+    <a class="brand" routerLink="/" aria-label="PigeonPrint početna strana">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-name">PigeonPrint</span>
+    </a>
+
+    <a class="admin-link" routerLink="adminLogin" (click)="admin()">Admin prijava <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="login-shell">
+    <section class="intro-panel" aria-labelledby="welcome-title">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> PRINT • ORDER • CREATE</div>
+
+      <h1 id="welcome-title">Sve što želiš da odštampaš, na jednom mestu.</h1>
+      <p class="intro-copy">
+        Pronađi štampariju, izaberi proizvod i pošalji porudžbinu bez bespotrebnog letenja po gradu.
+      </p>
+
+      <div class="pigeon-scene" aria-hidden="true">
+        <div class="paper paper-back"></div>
+        <div class="paper paper-front">
+          <span class="paper-kicker">PIGEON POST</span>
+          <strong>Special delivery.</strong>
+          <span>Tvoja sledeća porudžbina je samo par klikova daleko.</span>
+          <div class="paper-lines"></div>
+        </div>
+        <div class="pigeon-mascot" role="img" aria-label="PigeonPrint golub maskota"></div>
+        <div class="stamp">PP<br><small>01</small></div>
+      </div>
+
+      <div class="mini-note">
+        <span class="mini-note-icon">✦</span>
+        <span>Od vizit karte do velikog tiraža — golub zna put.</span>
+      </div>
+    </section>
+
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="card-heading">
+        <span class="card-label">DOBRODOŠLI NAZAD</span>
+        <h2 id="login-title">Prijavi se</h2>
+        <p>Unesi svoje podatke da nastaviš na PigeonPrint.</p>
+      </div>
+
+      <form (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+        <label class="field-label" for="username">Korisničko ime</label>
+        <div class="input-wrap">
+          <span class="input-icon" aria-hidden="true">@</span>
+          <input
+            id="username"
+            name="korisnicko_ime"
+            type="text"
+            [(ngModel)]="korisnicko_ime"
+            autocomplete="username"
+            placeholder="npr. jennieRubyJane"
+            required>
+        </div>
+
+        <label class="field-label" for="password">Lozinka</label>
+        <div class="input-wrap">
+          <span class="input-icon lock-icon" aria-hidden="true">●</span>
+          <input
+            id="password"
+            name="lozinka"
+            [(ngModel)]="lozinka"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Unesi lozinku"
+            required>
+        </div>
+
+        @if (poruka) {
+          <div class="error-message" role="alert">
+            <span aria-hidden="true">!</span>
+            {{poruka}}
+          </div>
+        }
+
+        <button class="login-button" type="submit" [disabled]="loginForm.invalid">
+          <span>Prijavi se</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="divider"><span>ili</span></div>
+
+      <p class="register-copy">
+        Nemaš nalog?
+        <span class="register-placeholder" (click)="registracija()">Registruj se!</span>
+      </p>
+
+      <div class="security-note">
+        <span aria-hidden="true">✓</span>
+        Lozinka se proverava bez čuvanja njenog otvorenog teksta.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>Made for people with things to print — and pigeons with places to be.</span>
+  </footer>
+</div>

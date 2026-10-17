@@ -1,0 +1,271 @@
+<div class="registration-page">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="PigeonPrint početna strana">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-name">PigeonPrint</span>
+    </a>
+
+    <a class="back-link" href="/">
+      <span aria-hidden="true">←</span>
+      Nazad na prijavu
+    </a>
+  </header>
+
+  <main class="registration-shell">
+    <section class="intro-panel" aria-labelledby="registration-welcome-title">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        JOIN • PRINT • CREATE
+      </div>
+
+      <h1 id="registration-welcome-title">Novi nalog. Nova štamparska priča.</h1>
+      <p class="intro-copy">
+        Popuni podatke, pošalji zahtev i PigeonPrint će te uskoro pustiti u jato.
+      </p>
+
+      <div class="pigeon-scene" aria-hidden="true">
+        <div class="paper paper-back"></div>
+        <div class="paper paper-front">
+          <span class="paper-kicker">PIGEON REGISTRY</span>
+          <strong>Application received.</strong>
+          <span>Još samo nekoliko podataka i tvoj zahtev je spreman za admina.</span>
+          <div class="paper-lines"></div>
+        </div>
+        <div class="pigeon-mascot"></div>
+        <div class="stamp">NEW<br><small>PP</small></div>
+      </div>
+
+      <div class="mini-note">
+        <span class="mini-note-icon">✦</span>
+        <span>Bez nepotrebnog letenja — sve podatke ostavljaš na jednom mestu.</span>
+      </div>
+    </section>
+
+    <section class="registration-card" aria-labelledby="registration-title">
+      <div class="card-heading">
+        <span class="card-label">NOVI PIGEONPRINT NALOG</span>
+        <h2 id="registration-title">Registruj se</h2>
+        <p>Unesi podatke i pošalji zahtev za registraciju.</p>
+      </div>
+
+      <form (ngSubmit)="registracija()" #registrationForm="ngForm" novalidate>
+        <div class="form-grid">
+          <div class="field-group">
+            <label class="field-label" for="reg-username">Korisničko ime</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">@</span>
+              <input
+                id="reg-username"
+                name="korisnicko_ime"
+                type="text"
+                [(ngModel)]="korisnicko_ime"
+                autocomplete="username"
+                placeholder="npr. laBellaDona"
+                required>
+            </div>
+            @if (porukaKorisnickoIme) {
+              <div class="field-error">{{porukaKorisnickoIme}}</div>
+            }
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="reg-password">Lozinka</label>
+            <div class="input-wrap">
+              <span class="input-icon lock-icon" aria-hidden="true">●</span>
+              <input
+                id="reg-password"
+                name="lozinka"
+                type="password"
+                [(ngModel)]="lozinka"
+                autocomplete="new-password"
+                placeholder="8–12 karaktera"
+                required>
+            </div>
+            @if (porukaLozinka) {
+              <div class="field-error">{{porukaLozinka}}</div>
+            }
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="reg-name">Ime</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">I</span>
+              <input id="reg-name" name="ime" type="text" [(ngModel)]="ime" placeholder="Ime" required>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="reg-surname">Prezime</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">P</span>
+              <input id="reg-surname" name="prezime" type="text" [(ngModel)]="prezime" placeholder="Prezime" required>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="reg-phone">Telefon</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">☎</span>
+              <input id="reg-phone" name="telefon" type="tel" [(ngModel)]="telefon" placeholder="06..." required>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="reg-email">Mejl</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">✉</span>
+              <input id="reg-email" name="mejl" type="email" [(ngModel)]="mejl" placeholder="ime@mejl.com" required>
+            </div>
+            @if (porukaMejl) {
+              <div class="field-error">{{porukaMejl}}</div>
+            }
+          </div>
+        </div>
+
+        <div class="upload-box">
+          <div class="upload-heading">
+            <span class="upload-icon" aria-hidden="true">▣</span>
+            <div>
+              <strong>Profilna slika</strong>
+              <span>JPG, PNG ili GIF • 100×100 do 250×250 px</span>
+            </div>
+          </div>
+
+          <input
+            class="file-input"
+            id="profile-image"
+            type="file"
+            accept=".jpg,.jpeg,.png,.gif"
+            (change)="onFileSelected($event)">
+
+          <p class="upload-note">Ako ne izabereš sliku, koristiće se podrazumevana PigeonPrint profilna.</p>
+
+          @if (porukaProfilna) {
+            <div class="field-error">{{porukaProfilna}}</div>
+          }
+        </div>
+
+        <fieldset class="registration-type">
+          <legend>Tip registracije</legend>
+
+          <div class="radio-grid">
+            <label class="radio-card">
+              <input
+                type="radio"
+                name="tipRegistracije"
+                value="fizicko_lice"
+                [(ngModel)]="tipRegistracije">
+              <span class="radio-copy">
+                <strong>Fizičko lice</strong>
+                <small>Lični PigeonPrint nalog</small>
+              </span>
+            </label>
+
+            <label class="radio-card">
+              <input
+                type="radio"
+                name="tipRegistracije"
+                value="pravno_lice"
+                [(ngModel)]="tipRegistracije">
+              <span class="radio-copy">
+                <strong>Pravno lice</strong>
+                <small>Nalog za instituciju</small>
+              </span>
+            </label>
+
+            <label class="radio-card">
+              <input
+                type="radio"
+                name="tipRegistracije"
+                value="stampar"
+                [(ngModel)]="tipRegistracije">
+              <span class="radio-copy">
+                <strong>Štampar</strong>
+                <small>Nalog za štampariju</small>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        @if (tipRegistracije != "fizicko_lice") {
+          <section class="institution-box">
+            <div class="section-heading">
+              <span class="section-kicker">DODATNI PODACI</span>
+              <h3>Podaci o instituciji</h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="field-group">
+                <label class="field-label" for="institution-name">Naziv institucije</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">▥</span>
+                  <input id="institution-name" name="naziv_institucije" type="text" [(ngModel)]="naziv_institucije" required>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="institution-address">Adresa sedišta</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">⌂</span>
+                  <input id="institution-address" name="adresa_sedista" type="text" [(ngModel)]="adresa_sedista" required>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="institution-city">Grad</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">⌖</span>
+                  <input id="institution-city" name="grad" type="text" [(ngModel)]="grad" required>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="institution-mb">Matični broj</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">#</span>
+                  <input id="institution-mb" name="maticni_broj" type="text" [(ngModel)]="maticni_broj" placeholder="8 cifara" required>
+                </div>
+                @if (porukaMB) {
+                  <div class="field-error">{{porukaMB}}</div>
+                }
+              </div>
+
+              <div class="field-group full-width">
+                <label class="field-label" for="institution-pib">PIB</label>
+                <div class="input-wrap">
+                  <span class="input-icon" aria-hidden="true">№</span>
+                  <input id="institution-pib" name="pib" type="text" [(ngModel)]="pib" placeholder="9 cifara" required>
+                </div>
+                @if (porukaPib0 || porukaPib) {
+                  <div class="field-error">{{porukaPib0}}{{porukaPib}}</div>
+                }
+              </div>
+            </div>
+          </section>
+        }
+
+        <button class="register-button" type="submit">
+          <span>Registruj se</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+
+        @if (glavnaPoruka) {
+          <div class="status-message" role="status">
+            <span aria-hidden="true">✦</span>
+            <span>{{glavnaPoruka}}</span>
+          </div>
+        }
+      </form>
+
+      <div class="security-note">
+        <span aria-hidden="true">✓</span>
+        Zahtev za registraciju postaje aktivan tek nakon odobrenja administratora.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>Small prints. Big ideas. Very organized pigeons.</span>
+  </footer>
+</div>

@@ -1,0 +1,737 @@
+[{
+  "_id": {
+    "$oid": "6a9db01b01e7245de6c88fd3"
+  },
+  "sifra": "SLG-001",
+  "naziv": "Personalizovana slagalica A4",
+  "opis": "Svaku slagalicu pripremamo posebno prema vašoj fotografiji, ilustraciji ili dizajnu, kako biste dobili mali, lični predmet koji je zaista samo vaš. A4 format je odličan za poklon, uspomenu ili jedno mirno popodne uz omiljenu fotografiju, a posebnu pažnju posvećujemo tome da boje i sitni detalji na štampi ostanu jasni i upečatljivi.",
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Slagalice",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 1200,
+  "kolicina_na_lageru": 21,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna"
+  ],
+  "glavna_slika": "products/slagalica2.png",
+  "dodatne_slike": [
+    "products/slagalica3.png",
+    "products/slagalica4.png"
+  ],
+  "broj_lajkova": 12,
+  "broj_dislajkova": 1,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 250,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db0b201e7245de6c88fd4"
+  },
+  "sifra": "DPL-002",
+  "naziv": "Diplomski rad 50 strana",
+  "opis": "Završni rad zaslužuje završnicu na koju ćete biti ponosni. Vaš rad štampamo i koričimo pažljivo, uz mogućnost izbora izgleda korica, kako bi konačna verzija izgledala uredno, profesionalno i spremno za predaju. Svaki primerak pripremamo pojedinačno, jer znamo koliko rada stoji iza poslednjih pedesetak strana studiranja.",
+  "kategorija": "Knjige i publikacije",
+  "potkategorija": "Završni radovi",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 1200,
+  "kolicina_na_lageru": 5,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Crvena"
+  ],
+  "glavna_slika": "products/zavrsnirad1.png",
+  "dodatne_slike": [
+    "products/zavrsnirad2.png",
+    "products/zavrsnirad3.png"
+  ],
+  "broj_lajkova": 0,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 178,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": [],
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "6a9db1f301e7245de6c88fd7"
+  },
+  "sifra": "RUB-003",
+  "naziv": "Roll-up Baner 200x100",
+  "opis": "Roll-up baner izrađujemo prema vašem vizuelnom identitetu, fotografijama i poruci koju želite da istaknete. Namenjen je sajmovima, događajima, prezentacijama i malim biznisima koji žele da njihov kutak odmah bude primećen. Pre štampe obraćamo pažnju na raspored elemenata i čitljivost dizajna u velikom formatu, da konačni baner izgleda lepo i iz blizine i sa distance.",
+  "kategorija": "Stampa velikih formata",
+  "potkategorija": "Roll-up Baneri",
+  "korisnicko_ime_vlasnika": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "jedinicna_cena": 3560,
+  "kolicina_na_lageru": 7,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Zuta",
+    "Zelena"
+  ],
+  "glavna_slika": "products/baner2.jpg",
+  "dodatne_slike": [
+    "products/baner3.jpg",
+    "products/baner4.png"
+  ],
+  "broj_lajkova": 243,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 2500,
+      "max_sirina_mm": 2000,
+      "max_visina_mm": 1000
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db2fc01e7245de6c88fd9"
+  },
+  "sifra": "VKP-004",
+  "naziv": "Vizit karta - podsetnica",
+  "opis": "Mala kartica koja treba da ostavi veliki prvi utisak. Vizit kartu prilagođavamo vašem imenu, kontakt podacima, logotipu i stilu, bilo da želite nešto sasvim jednostavno ili malo razigranije. Svaku porudžbinu pripremamo kao zaseban mali projekat, kako kartica ne bi izgledala kao još jedan generički šablon.",
+  "kategorija": "Stampa malih formata",
+  "potkategorija": "Vizit karte",
+  "korisnicko_ime_vlasnika": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "jedinicna_cena": 650,
+  "kolicina_na_lageru": 0,
+  "boje": [
+    "Bela",
+    "Siva"
+  ],
+  "glavna_slika": "products/vizitkarta1.jpg",
+  "dodatne_slike": [
+    "products/vizitkarta11.jpg",
+    "products/vizitkarta111.jpg"
+  ],
+  "broj_lajkova": 3,
+  "broj_dislajkova": 2,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 120,
+      "max_sirina_mm": 60,
+      "max_visina_mm": 30
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db46a01e7245de6c88fdc"
+  },
+  "sifra": "KNJ-001",
+  "naziv": "Knjiga A5 - meki povez",
+  "opis": "Vaš tekst pretvaramo u malu A5 knjigu sa mekim povezom i koricama u boji, pažljivo pripremljenu od prve do poslednje strane. Ovaj format posebno volimo za zbirke priča, poeziju, male tiraže i autorska izdanja. Svaku porudžbinu pregledamo kao zaseban projekat kako bi knjiga, kada je konačno uzmete u ruke, izgledala baš kao nešto što želite da sačuvate.",
+  "kategorija": "Knjige i publikacije",
+  "potkategorija": "Knjige",
+  "korisnicko_ime_vlasnika": "missAmericana",
+  "naziv_stamparije": "The Tortured Poets Department",
+  "jedinicna_cena": 950,
+  "kolicina_na_lageru": 5,
+  "boje": [
+    "Bela",
+    "Krem"
+  ],
+  "glavna_slika": "products/knjiga1.jpg",
+  "dodatne_slike": [
+    "products/knjiga3.jpg",
+    "products/knjiga4.jpg"
+  ],
+  "broj_lajkova": 187,
+  "broj_dislajkova": 4,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 300,
+      "max_sirina_mm": 148,
+      "max_visina_mm": 210
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db47f01e7245de6c88fdd"
+  },
+  "sifra": "OBL-001",
+  "naziv": "Personalizovani obeleživač za knjige",
+  "opis": "Mali detalj za ljude koji vole da njihova knjiga bude još malo više njihova. Obeleživač možemo da personalizujemo omiljenom ilustracijom, fotografijom, kratkim tekstom ili dizajnom koji nam pošaljete. Svaki primerak pripremamo pažljivo i u malom formatu čuvamo što više detalja, pa je odličan i kao sitan poklon uz knjigu.",
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Obelezivaci za knjige",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 180,
+  "kolicina_na_lageru": 75,
+  "boje": [
+    "Bela",
+    "Krem",
+    "Crna",
+    "Zelena",
+    "Plava"
+  ],
+  "glavna_slika": "products/obelezivac.jpg",
+  "dodatne_slike": [
+    "products/obelezivac2.jpg",
+    "products/obelezivac3.jpg"
+  ],
+  "broj_lajkova": 94,
+  "broj_dislajkova": 1,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 40,
+      "max_sirina_mm": 50,
+      "max_visina_mm": 180
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db49b01e7245de6c88fde"
+  },
+  "sifra": "PST-001",
+  "naziv": "Art poster A3",
+  "opis": "Vašu ilustraciju, fotografiju ili omiljeni dizajn pretvaramo u A3 poster koji je spreman da dobije svoje mesto na zidu. Posebno pazimo da boje, kontrast i detalji lepo izgledaju u štampi, a ne samo na ekranu. Idealan je za umetničke radove, fotografije, poklone ili jednostavno za onaj prazan zid kojem već dugo nešto nedostaje.",
+  "kategorija": "Stampa velikih formata",
+  "potkategorija": "Posteri",
+  "korisnicko_ime_vlasnika": "shortAndSweet",
+  "naziv_stamparije": "EVOlution",
+  "jedinicna_cena": 850,
+  "kolicina_na_lageru": 18,
+  "boje": [
+    "Bela",
+    "Krem"
+  ],
+  "glavna_slika": "products/poster1.jpg",
+  "dodatne_slike": [
+    "products/poster11.jpg",
+    "products/poster111.jpg"
+  ],
+  "broj_lajkova": 156,
+  "broj_dislajkova": 2,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 220,
+      "max_sirina_mm": 297,
+      "max_visina_mm": 420
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6a9db4b501e7245de6c88fdf"
+  },
+  "sifra": "RAZ-001",
+  "naziv": "Personalizovana razglednica A6",
+  "opis": "Razglednicu pravimo od vaše fotografije, ilustracije ili ideje, uz prostor za onu poruku koju je ipak lepše napisati rukom nego poslati u čet prozoru. A6 format je mali, praktičan i dovoljno ličan da postane uspomena. Svaku porudžbinu pripremamo posebno, bilo da šaljete pozdrav sa putovanja, pravite zahvalnice ili želite malu seriju svojih ilustracija.",
+  "kategorija": "Stampa malih formata",
+  "potkategorija": "Razglednice",
+  "korisnicko_ime_vlasnika": "fallenAngel",
+  "naziv_stamparije": "Odd Atellier",
+  "jedinicna_cena": 150,
+  "kolicina_na_lageru": 100,
+  "boje": [
+    "Bela",
+    "Krem"
+  ],
+  "glavna_slika": "products/razglednica.jpg",
+  "dodatne_slike": [
+    "products/razglednica11.jpg",
+    "products/razglednica111.jpg"
+  ],
+  "broj_lajkova": 68,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 50,
+      "max_sirina_mm": 105,
+      "max_visina_mm": 148
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa8680e070399565f27ee14"
+  },
+  "sifra": "BIL-001",
+  "naziv": "Bilbord sa personalizovanim dizajnom",
+  "opis": "Kada poruka treba da se vidi izdaleka, vaš dizajn prilagođavamo velikom formatu tako da ostane jasan, upečatljiv i čitljiv. Bilbord pripremamo prema vašoj kampanji, fotografijama, bojama i tekstu, uz posebnu pažnju na raspored elemenata koji moraju da funkcionišu i kada ih neko vidi samo nekoliko sekundi. Svaki vizual tretiramo kao zaseban projekat, a ne kao običnu uvećanu sliku.",
+  "kategorija": "Stampa velikih formata",
+  "potkategorija": "Bilbordi",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 24000,
+  "kolicina_na_lageru": 5,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Roze",
+    "Zelena"
+  ],
+  "glavna_slika": "products/bilbord111.jpg",
+  "dodatne_slike": [
+    "products/bilbord1111.jpg",
+    "products/bilbord11.jpg"
+  ],
+  "broj_lajkova": 12,
+  "broj_dislajkova": 1,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 2500,
+      "max_sirina_mm": 3000,
+      "max_visina_mm": 2000
+    },
+    {
+      "naziv": "Sito stampa",
+      "dodatna_cena_po_komadu": 2100,
+      "max_sirina_mm": 3000,
+      "max_visina_mm": 2000
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa86a26070399565f27ee15"
+  },
+  "sifra": "BIL-003",
+  "naziv": "Fototapete sa personalizovanim dizajnom",
+  "opis": "Fototapetu izrađujemo prema vašem prostoru i motivu koji želite da svakog dana gledate na svom zidu. To može biti fotografija, ilustracija, nežan dezen ili potpuno originalan dizajn koji zajedno prilagođavamo velikoj površini. Posebno pazimo na proporcije i detalje kako bi konačna štampa delovala kao deo prostora, a ne samo kao velika slika zalepljena na zid.",
+  "kategorija": "Stampa velikih formata",
+  "potkategorija": "Fototapete",
+  "korisnicko_ime_vlasnika": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "jedinicna_cena": 35060,
+  "kolicina_na_lageru": 7,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Zuta",
+    "Zelena"
+  ],
+  "glavna_slika": "products/tapete1.jpg",
+  "dodatne_slike": [
+    "products/tapete11.jpg",
+    "products/tapete111.png"
+  ],
+  "broj_lajkova": 243,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 2500,
+      "max_sirina_mm": 25000,
+      "max_visina_mm": 20000
+    },
+    {
+      "naziv": "Sito stampa",
+      "dodatna_cena_po_komadu": 2800,
+      "max_sirina_mm": 25000,
+      "max_visina_mm": 20000
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa86e81070399565f27ee1e"
+  },
+  "sifra": "SKT-001",
+  "naziv": "Skripta sa koričenjem",
+  "opis": "Skriptu štampamo i koričimo tako da izdrži mnogo listanja, podvlačenja i onih poslednjih dana pred ispit. Možete prilagoditi izgled korica i štampe, a svaki primerak pripremamo uredno i pregledno kako bi materijal bio prijatan za svakodnevno korišćenje. Nama je cilj da od običnog fajla dobijete skriptu koju ćete stvarno želeti da nosite sa sobom.",
+  "kategorija": "Knjige i publikacije",
+  "potkategorija": "Skripte",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 1150,
+  "kolicina_na_lageru": 17,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Crvena"
+  ],
+  "glavna_slika": "products/skripta1.jpg",
+  "dodatne_slike": [
+    "products/skripta11.jpg",
+    "products/skripta111.jpg"
+  ],
+  "broj_lajkova": 435,
+  "broj_dislajkova": 3,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 275,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    },
+    {
+      "naziv": "Ofset stampa",
+      "dodatna_cena_po_komadu": 235,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa86f8f070399565f27ee1f"
+  },
+  "sifra": "CSP-001",
+  "naziv": "Časopis sa personalizacijom po želji",
+  "opis": "Od vaših tekstova, fotografija i ideja pravimo časopis koji izgleda kao malo pravo izdanje napravljeno baš za vas. Može biti poklon, uspomena, školski ili kreativni projekat, mini magazin za događaj ili nešto sasvim vaše. Stranice i personalizovane elemente pripremamo sa posebnom pažnjom kako bi svaki primerak imao karakter, a ne izgled masovno odštampanog šablona.",
+  "kategorija": "Knjige i publikacije",
+  "potkategorija": "Časopisi",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 2870,
+  "kolicina_na_lageru": 13,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Crvena"
+  ],
+  "glavna_slika": "products/magazin11.jpg",
+  "dodatne_slike": [
+    "products/magazin1.jpg",
+    "products/magazin111.jpg"
+  ],
+  "broj_lajkova": 43,
+  "broj_dislajkova": 2,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 1075,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    },
+    {
+      "naziv": "Ofset stampa",
+      "dodatna_cena_po_komadu": 1235,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa87364070399565f27ee24"
+  },
+  "sifra": "MJC-002",
+  "naziv": "Stampa na vašoj majici",
+  "opis": "Donesite svoju majicu, a mi ćemo joj dodati nešto što je samo vaše — ilustraciju, natpis, fotografiju ili dizajn koji ste sami osmislili. Pre štampe prilagođavamo motiv dostupnoj površini kako bi lepo legao na majicu i zadržao detalje. Volimo male, lične porudžbine, od jedne majice za poklon do nekoliko komada za ekipu, događaj ili malu priču koju želite da nosite sa sobom.",
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Majice",
+  "korisnicko_ime_vlasnika": "shortAndSweet",
+  "naziv_stamparije": "EVOlution",
+  "jedinicna_cena": 1200,
+  "kolicina_na_lageru": 15,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Zelena"
+  ],
+  "glavna_slika": "products/majica311.jpg",
+  "dodatne_slike": [
+    "products/majica211.jpg",
+    "products/majica11.jpg"
+  ],
+  "broj_lajkova": 126,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 850,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    },
+    {
+      "naziv": "DTG i DTF stampa",
+      "dodatna_cena_po_komadu": 640,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa8739b070399565f27ee25"
+  },
+  "sifra": "CGR-002",
+  "naziv": "Stampa na vašem cegeru",
+  "opis": "Vaš običan ceger možemo da pretvorimo u nešto što ćete zaista želeti da nosite svuda. Štampamo ilustracije, kratke poruke, fotografije i originalne dizajne, a motiv pažljivo prilagođavamo površini cegera pre same izrade. Svaki komad radimo po porudžbini, pa je odličan izbor za lični detalj, mali poklon ili simpatičnu seriju za vaš događaj ili brend.",
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Cegeri",
+  "korisnicko_ime_vlasnika": "shortAndSweet",
+  "naziv_stamparije": "EVOlution",
+  "jedinicna_cena": 1450,
+  "kolicina_na_lageru": 18,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Zelena"
+  ],
+  "glavna_slika": "products/ceger1.jpg",
+  "dodatne_slike": [
+    "products/ceger11.jpg",
+    "products/ceger111.jpg"
+  ],
+  "broj_lajkova": 16,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 850,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    },
+    {
+      "naziv": "DTG i DTF stampa",
+      "dodatna_cena_po_komadu": 640,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa87426070399565f27ee26"
+  },
+  "sifra": "POZ-004",
+  "naziv": "Pozivnica sa personalnim dizajnom",
+  "opis": "Pozivnicu oblikujemo oko vašeg događaja, umesto da vaš događaj pokušavamo da uklopimo u gotov šablon. Možete poslati svoje boje, tekst, fotografije i ideju, a mi ih pretvaramo u malu štampanu najavu koju će gosti želeti da sačuvaju. Bilo da je u pitanju rođendan, proslava ili neko sasvim posebno okupljanje, svaku seriju pripremamo kao mali lični projekat.",
+  "kategorija": "Stampa malih formata",
+  "potkategorija": "Pozivnice",
+  "korisnicko_ime_vlasnika": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "jedinicna_cena": 650,
+  "kolicina_na_lageru": 0,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Zelena",
+    "Roze"
+  ],
+  "glavna_slika": "products/pozivnica1.jpg",
+  "dodatne_slike": [
+    "products/pozivnica11.jpg",
+    "products/pozivnica111.jpg"
+  ],
+  "broj_lajkova": 103,
+  "broj_dislajkova": 8,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 900,
+      "max_sirina_mm": 100,
+      "max_visina_mm": 200
+    },
+    {
+      "naziv": "Sito stampa",
+      "dodatna_cena_po_komadu": 870,
+      "max_sirina_mm": 100,
+      "max_visina_mm": 200
+    },
+    {
+      "naziv": "Ofset  stampa",
+      "dodatna_cena_po_komadu": 470,
+      "max_sirina_mm": 100,
+      "max_visina_mm": 200
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aa8753e070399565f27ee28"
+  },
+  "sifra": "STK-001",
+  "naziv": "Stikeri - nalepnice",
+  "opis": "Vašu ideju pretvaramo u malu kolekciju stikera koje možete lepiti na sveske, pakovanja, poklone ili gde god vam padne na pamet. Možete poslati ilustraciju, logo, tekst ili sopstveni dizajn, a mi ga prilagođavamo formatu tako da i sitni detalji ostanu jasni. Posebno volimo male personalizovane serije jer svaki set na kraju izgleda kao mala priča svog vlasnika.",
+  "kategorija": "Stampa malih formata",
+  "potkategorija": "Stikeri",
+  "korisnicko_ime_vlasnika": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "jedinicna_cena": 800,
+  "kolicina_na_lageru": 13,
+  "boje": [
+    "Bela",
+    "Siva",
+    "Plava",
+    "Crna",
+    "Crvena"
+  ],
+  "glavna_slika": "products/stikeri1.jpg",
+  "dodatne_slike": [
+    "products/stikeri2.jpg",
+    "products/stikeri3.png"
+  ],
+  "broj_lajkova": 1143,
+  "broj_dislajkova": 2,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 1075,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    },
+    {
+      "naziv": "Ofset stampa",
+      "dodatna_cena_po_komadu": 800,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    },
+    {
+      "naziv": "Sublimaciona stampa",
+      "dodatna_cena_po_komadu": 1700,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 296
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6aaf0d6339e866fe7d71d978"
+  },
+  "sifra": "OBL-97",
+  "naziv": "Obeleživač - magija prirode",
+  "opis": "Obeleživač za knjige izrađujemo pažljivo, u malim serijama, sa idejom da svaki primerak bude mali detalj koji čitanje čini još lepšim. Kvalitetna štampa i prijatan materijal daju mu uredan, nežan izgled, a svaki komad prolazi kroz naše ruke pre nego što stigne do vas. Bilo da ga birate za sebe, kao mali znak pažnje ili dodatak uz poklon, pravimo ga s ljubavlju prema papiru, štampi i svim onim sitnicama koje imaju posebno mesto među stranicama omiljene knjige.",
+  "korisnicko_ime_vlasnika": "missAmericana",
+  "boje": [
+    "Krem",
+    "Siva",
+    "Roze",
+    "Plava",
+    "Crna"
+  ],
+  "naziv_stamparije": "The Tortured Poets Department",
+  "usluge_stampe": [
+    {
+      "naziv": "DTG štampa",
+      "dodatna_cena_po_komadu": 145,
+      "max_sirina_mm": 35,
+      "max_visina_mm": 150,
+      "_id": {
+        "$oid": "6aaf0d6339e866fe7d71d979"
+      }
+    }
+  ],
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Obelezivaci za knjige",
+  "jedinicna_cena": 890,
+  "kolicina_na_lageru": 9,
+  "broj_lajkova": 0,
+  "broj_dislajkova": 0,
+  "glavna_slika": "1789857123192-765077-slika13.jpg",
+  "dodatne_slike": [
+    "1789857123262-103892-slika12.jpg",
+    "1789857123333-522670-slika1.jpg"
+  ],
+  "__v": 0,
+  "dislajkovali": [],
+  "lajkovali": []
+},
+{
+  "_id": {
+    "$oid": "6ab19f9449fed2f36c8b2893"
+  },
+  "sifra": "SLG-002",
+  "naziv": "Personalizovana slagalica A4",
+  "opis": "Personalizovana A4 slagalica izrađena prema fotografiji, ilustraciji ili dizajnu kupca, pogodna za poklone i posebne uspomene.",
+  "kategorija": "Kreativne stampe",
+  "potkategorija": "Slagalice",
+  "korisnicko_ime_vlasnika": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "jedinicna_cena": 1100,
+  "kolicina_na_lageru": 16,
+  "boje": [
+    "Bela",
+    "Plava",
+    "Crna"
+  ],
+  "glavna_slika": "products/slagalica2.png",
+  "dodatne_slike": [
+    "products/slagalica3.png",
+    "products/slagalica4.png"
+  ],
+  "broj_lajkova": 0,
+  "broj_dislajkova": 0,
+  "usluge_stampe": [
+    {
+      "naziv": "Digitalna stampa",
+      "dodatna_cena_po_komadu": 220,
+      "max_sirina_mm": 210,
+      "max_visina_mm": 297
+    }
+  ],
+  "dislajkovali": [],
+  "lajkovali": []
+}]

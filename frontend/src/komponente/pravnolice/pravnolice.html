@@ -1,0 +1,486 @@
+<div class="profile-page">
+  <header class="site-header">
+    <a class="brand" routerLink="/pocetna">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">ink, paper & city pigeons</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+
+      <a class="back-link" routerLink="/" style="cursor:pointer ;" (click)="nazad()">← Nazad na početnu</a>
+
+      <button class="logout-button" type="button" (click)="logout()">Odjavi se</button>
+
+    </div>
+  </header>
+
+  <main class="profile-shell">
+    <section class="profile-hero">
+      <div>
+        <span class="eyebrow">MOJ PROFIL</span>
+        <h1>Zdravo, {{ime || korisnicko_ime}} </h1>
+        <p>
+          Ovde možeš da pregledaš i ažuriraš svoje podatke, kao i da pratiš sve svoje porudžbine.
+        </p>
+      </div>
+
+      <div class="profile-stamp" aria-hidden="true">
+        <span>LEGAL CLIENT</span>
+        <strong>PP</strong>
+      </div>
+    </section>
+
+    <section class="profile-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">LIČNI PODACI</span>
+          <h2>Tvoj PigeonPrint nalog</h2>
+        </div>
+
+        @if(!menjanjeAktivno){
+          <button class="secondary-button" type="button" (click)="promeniPodatke()">
+            Izmeni podatke
+          </button>
+        }
+      </div>
+
+      @if(poruka){
+        <div class="message profile-message" [class.success-message]="poruka.includes('Uspešno') || poruka.includes('uspešno')">
+          {{poruka}}
+        </div>
+      }
+
+      <div class="profile-grid">
+        <div class="photo-column">
+          <div class="profile-photo-wrap">
+            <img
+              class="profile-photo"
+              [src]="previewProfilne || putanjaProfilne(profilna)"
+              alt="Profilna slika">
+            <span class="photo-badge">{{korisnicko_ime.charAt(0).toUpperCase()}}</span>
+          </div>
+
+          @if(menjanjeAktivno){
+            <label class="upload-button" for="profile-image">Promeni profilnu</label>
+            <input
+              class="file-input"
+              id="profile-image"
+              type="file"
+              accept=".jpg,.jpeg,.png,.gif"
+              (change)="onFileSelected($event)">
+            <p class="upload-note">JPG, PNG ili GIF · 100×100 do 250×250 px</p>
+
+            @if(porukaProfilna){
+              <p class="field-error">{{porukaProfilna}}</p>
+            }
+          }
+        </div>
+
+        <div class="details-column">
+          <div class="field readonly-field">
+            <label>Korisničko ime</label>
+            <div class="readonly-value">
+              <span>{{korisnicko_ime}}</span>
+              <small>ne može da se menja</small>
+            </div>
+          </div>
+
+          @if(menjanjeAktivno){
+            <div class="form-grid">
+              <div class="form-group-title">Lični podaci</div>
+
+              <label class="field">
+                <span>Ime</span>
+                <input type="text" [(ngModel)]="ime">
+              </label>
+
+              <label class="field">
+                <span>Prezime</span>
+                <input type="text" [(ngModel)]="prezime">
+              </label>
+
+              <label class="field">
+                <span>Telefon</span>
+                <input type="text" [(ngModel)]="telefon">
+              </label>
+
+              <label class="field">
+                <span>E-mail</span>
+                <input type="email" [(ngModel)]="mejl">
+              </label>
+
+              <div class="form-group-title institution-title">Podaci ustanove</div>
+
+              <label class="field field-wide">
+                <span>Naziv institucije</span>
+                <input type="text" [(ngModel)]="naziv_institucije">
+              </label>
+
+              <label class="field">
+                <span>Adresa sedišta</span>
+                <input type="text" [(ngModel)]="adresa_sedista">
+              </label>
+
+              <label class="field">
+                <span>Grad</span>
+                <input type="text" [(ngModel)]="grad">
+              </label>
+
+              <label class="field">
+                <span>Matični broj</span>
+                <input type="text" [(ngModel)]="maticni_broj" maxlength="8" inputmode="numeric">
+                @if(porukaMB){
+                  <small class="field-error inline-error">{{porukaMB}}</small>
+                }
+              </label>
+
+              <label class="field">
+                <span>PIB</span>
+                <input type="text" [(ngModel)]="pib" maxlength="9" inputmode="numeric">
+                @if(porukaPIB){
+                  <small class="field-error inline-error">{{porukaPIB}}</small>
+                }
+              </label>
+            </div>
+
+            <div class="edit-actions">
+              <button class="ghost-button" type="button" (click)="odustaniOdIzmena()">
+                Odustani
+              </button>
+              <button class="primary-button" type="button" (click)="azurirajPodatke()">
+                Sačuvaj izmene →
+              </button>
+            </div>
+          }
+          @else{
+            <div class="data-grid">
+              <div class="data-group-title">Lični podaci</div>
+              <div class="data-item">
+                <span>Ime</span>
+                <strong>{{ime}}</strong>
+              </div>
+              <div class="data-item">
+                <span>Prezime</span>
+                <strong>{{prezime}}</strong>
+              </div>
+              <div class="data-item">
+                <span>Telefon</span>
+                <strong>{{telefon}}</strong>
+              </div>
+              <div class="data-item">
+                <span>E-mail</span>
+                <strong>{{mejl}}</strong>
+              </div>
+
+              <div class="data-group-title institution-title">Podaci ustanove</div>
+              <div class="data-item data-item-wide">
+                <span>Naziv institucije</span>
+                <strong>{{naziv_institucije}}</strong>
+              </div>
+              <div class="data-item">
+                <span>Adresa sedišta</span>
+                <strong>{{adresa_sedista}}</strong>
+              </div>
+              <div class="data-item">
+                <span>Grad</span>
+                <strong>{{grad}}</strong>
+              </div>
+              <div class="data-item">
+                <span>Matični broj</span>
+                <strong>{{maticni_broj}}</strong>
+              </div>
+              <div class="data-item">
+                <span>PIB</span>
+                <strong>{{pib}}</strong>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+
+<div class="legal-dashboard">
+    <section class="procurements-section">
+      <div class="procurements-heading">
+        <div>
+          <span class="section-kicker">JAVNE NABAVKE</span>
+          <h2>Moje javne nabavke</h2>
+          <p>Ovde možeš da pratiš zahteve koje je tvoja institucija poslala štamparijama.</p>
+        </div>
+        <span class="procurement-count">{{javneNabavke.length}} ukupno</span>
+      </div>
+
+      @if(javneNabavke.length > 0){
+        <div class="procurement-grid">
+          @for(nabavka of javneNabavke; track nabavka.id_nabavke){
+            <article class="procurement-card">
+              <div class="procurement-card-top">
+                <div>
+                  <span class="procurement-label">ID NABAVKE</span>
+                  <strong class="procurement-id">{{nabavka.id_nabavke}}</strong>
+                </div>
+                <span class="status-pill procurement-status" [class.finished]="nabavka.status=='zavrsena'">
+                  {{nabavka.status}}
+                </span>
+              </div>
+
+              <div class="procurement-meta">
+                <div>
+                  <span>Datum i vreme</span>
+                  <strong>{{nabavka.datum | date:'dd.MM.yyyy. HH:mm'}}</strong>
+                </div>
+                <div>
+                  <span>Broj ponuda</span>
+                  <strong>{{nabavka.ponude.length}}</strong>
+                </div>
+              </div>
+
+              <div class="procurement-products">
+                <span class="procurement-label">TRAŽENI PROIZVODI</span>
+                <ol>
+                  @for(stavka of nabavka.stavke; track $index){
+                    <li>
+                      <span>{{stavka.nazivProizvoda}}</span>
+                      <strong>× {{stavka.kolicina}}</strong>
+                    </li>
+                  }
+                </ol>
+              </div>
+
+              @if(nabavka.pobednik){
+                <div class="winner-note">
+                  <span>Izabrana štamparija</span>
+                  <strong>{{nabavka.pobednik}}</strong>
+                </div>
+              }
+            </article>
+          }
+        </div>
+      }
+     @else{
+        <div class="empty-orders procurement-empty empty-illustrated">
+          <div class="empty-copy">
+            <h3>Još nema javnih nabavki.</h3>
+            <p>Kada potvrdiš korpu kao pravno lice, nova javna nabavka će se pojaviti ovde.</p>
+          </div>
+          <img class="empty-document-image" src="products/nabavka.png" alt="PigeonPrint javna nabavka">
+          <img class="empty-pigeon-image" src="products/pigeon.png" alt="PigeonPrint golub">
+        </div>
+      }
+    </section>
+
+    <section class="orders-section">
+      <div class="orders-heading">
+        <div>
+          <span class="section-kicker">MOJE PORUDŽBINE</span>
+          <h2>Fakture i statusi</h2>
+          <p>Sve aktuelne i prethodne porudžbine na jednom mestu.</p>
+        </div>
+
+        <label class="sort-control">
+          <span>Sortiraj</span>
+          <select [(ngModel)]="sortiranje" (change)="sortirajFakture()">
+            <option value="datum_novije">Najnovije prvo</option>
+            <option value="datum_starije">Najstarije prvo</option>
+            <option value="iznos_veci">Iznos: veći prvo</option>
+            <option value="iznos_manji">Iznos: manji prvo</option>
+            <option value="stamparija">Štamparija A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      @if(fakture.length>0){
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>ID fakture</th>
+                <th>Štamparija</th>
+                <th>Grad</th>
+                <th>Proizvodi</th>
+                <th>Status</th>
+                <th class="amount-column">Ukupan iznos</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(faktura of fakture; track faktura.id_fakture){
+                <tr>
+                  <td class="invoice-id">{{faktura.id_fakture}}</td>
+                  <td>
+                    <strong>{{faktura.naziv_stamparije}}</strong>
+                  </td>
+                  <td>{{faktura.grad_stamparije}}</td>
+                  <td>
+                    <ol class="product-list">
+                      @for(stavka of faktura.stavke; track $index){
+                        <li>{{stavka.nazivProizvoda}} <span>({{stavka.kolicina}})</span></li>
+                      }
+                    </ol>
+                  </td>
+                  <td>
+                    <span class="status-pill" [class.cancelled]="faktura.status=='otkazano'">
+                      {{faktura.status}}
+                    </span>
+                  </td>
+                  <td class="amount-column"><strong>{{faktura.ukupni_iznos}} RSD</strong></td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+     @else{
+        <div class="empty-orders empty-illustrated">
+          <div class="empty-copy">
+            <h3>Još nema faktura.</h3>
+            <p>Kada bude nastala prva faktura, ona će se pojaviti ovde.</p>
+          </div>
+          <img class="empty-document-image" src="products/faktura.png" alt="PigeonPrint faktura">
+          <img class="empty-pigeon-image" src="products/pigeon.png" alt="PigeonPrint golub">
+        </div>
+      }
+
+    </section>
+    </div>
+
+    <section class="archive-section">
+      <div class="orders-heading">
+        <div>
+          <span class="section-kicker">ARHIVA PROIZVODA</span>
+          <h2>Isporučeni i primljeni proizvodi</h2>
+          <p>Ovde se nalaze proizvodi koji su ti isporučeni ili koje si već označila kao primljene.</p>
+        </div>
+
+        <label class="sort-control">
+          <span>Sortiraj</span>
+          <select [(ngModel)]="sortiranjeArhive" (change)="sortirajArhivu()">
+            <option value="datum_novije">Najnovije prvo</option>
+            <option value="datum_starije">Najstarije prvo</option>
+            <option value="naziv">Naziv proizvoda A–Z</option>
+            <option value="kolicina_vece">Količina: veća prvo</option>
+            <option value="kolicina_manje">Količina: manja prvo</option>
+            <option value="stamparija">Štamparija A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      @if(arhivaProizvoda.length>0){
+        <div class="archive-grid">
+          @for(proizvod of arhivaProizvoda; track $index){
+            <article class="archive-card">
+              <div class="archive-card-top">
+                <div>
+                  <span class="archive-code">{{proizvod.sifraProizvoda}}</span>
+                  <h3>{{proizvod.nazivProizvoda}}</h3>
+                </div>
+                <span class="status-pill" [class.received]="proizvod.status=='primljeno'">
+                  {{proizvod.status}}
+                </span>
+              </div>
+
+              <div class="archive-details">
+                <div>
+                  <span>Štamparija</span>
+                  <strong>{{proizvod.nazivStamparije}}</strong>
+                </div>
+                <div>
+                  <span>Količina</span>
+                  <strong>{{proizvod.kolicina}}</strong>
+                </div>
+                <div>
+                  <span>Boja</span>
+                  <strong>{{proizvod.boja || '—'}}</strong>
+                </div>
+                <div>
+                  <span>Tip štampe</span>
+                  <strong>{{proizvod.tipStampe || '—'}}</strong>
+                </div>
+                <div>
+                  <span>Ukupna cena</span>
+                  <strong>{{proizvod.ukupnaCena}} RSD</strong>
+                </div>
+                <div>
+                  <span>Datum porudžbine</span>
+                  <strong>{{proizvod.datum}}</strong>
+                </div>
+              </div>
+
+              <div class="archive-actions">
+                @if(proizvod.status=="isporuceno"){
+                  <button class="primary-button" type="button"
+                    (click)="promeniStatus(proizvod.idFakture, proizvod.sifraProizvoda)">
+                    Označi kao primljeno
+                  </button>
+                }
+                @else{
+                  <div class="received-actions">
+                    <span class="received-note">✓ Proizvod je primljen</span>
+
+                    <div class="reaction-buttons" aria-label="Reakcija na proizvod">
+                      <button
+                        class="reaction-button"
+                        [class.active]="proizvod.proizvod.lajkovali.includes(korisnicko_ime)"
+                        type="button"
+                        (click)="lajk(proizvod.sifraProizvoda)">
+                        <span class="reaction-icon">♥</span>
+                        <span>Sviđa mi se</span>
+                        <strong>{{proizvod.proizvod.lajkovali.length}}</strong>
+                      </button>
+
+                      <button
+                        class="reaction-button dislike"
+                        [class.active]="proizvod.proizvod.dislajkovali.includes(korisnicko_ime)"
+                        type="button"
+                        (click)="dislajk(proizvod.sifraProizvoda)">
+                        <span class="reaction-icon">↓</span>
+                        <span>Ne sviđa mi se</span>
+                        <strong>{{proizvod.proizvod.dislajkovali.length}}</strong>
+                      </button>
+                    </div>
+
+                    <div class="comment-form">
+                      <label [for]="'komentar-' + proizvod.sifraProizvoda">Ostavi komentar</label>
+                      <textarea
+                        [id]="'komentar-' + proizvod.sifraProizvoda"
+                        rows="3"
+                        maxlength="500"
+                        [(ngModel)]="tekstKomentara"
+                        placeholder="Napiši utisak o proizvodu..."></textarea>
+                      <div class="comment-form-bottom">
+                        <span>{{tekstKomentara.length}} / 500</span>
+                        <button
+                          class="comment-button"
+                          type="button"
+                          [disabled]="tekstKomentara.trim()==''"
+                          (click)="komentarisi(proizvod.sifraProizvoda)">
+                          Objavi komentar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      }
+      @else{
+        <div class="empty-orders">
+          <span class="empty-mark">PP</span>
+          <div>
+            <h3>Arhiva je trenutno prazna.</h3>
+            <p>Isporučeni i primljeni proizvodi pojaviće se ovde.</p>
+          </div>
+        </div>
+      }
+    </section>
+  </main>
+    <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6a9da2c301e7245de6c88fc7"
+  },
+  "naziv": "Knjige i publikacije",
+  "potkategorije": [
+    "Knjige",
+    "Završni radovi",
+    "Skripte",
+    "Časopisi"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a9da34501e7245de6c88fc8"
+  },
+  "naziv": "Kreativne stampe",
+  "potkategorije": [
+    "Slagalice",
+    "Obelezivaci za knjige",
+    "Cegeri",
+    "Majice"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a9da3c701e7245de6c88fc9"
+  },
+  "naziv": "Stampa velikih formata",
+  "potkategorije": [
+    "Posteri",
+    "Roll-up Baneri",
+    "Fototapete",
+    "Bilbordi"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a9da50e01e7245de6c88fca"
+  },
+  "naziv": "Stampa malih formata",
+  "potkategorije": [
+    "Vizit karte",
+    "Pozivnice",
+    "Razglednice",
+    "Stikeri"
+  ]
+}]

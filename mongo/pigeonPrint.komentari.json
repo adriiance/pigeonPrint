@@ -1,0 +1,331 @@
+[{
+  "_id": {
+    "$oid": "6ab2c760cce51c250ca151e2"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Odbranila sam diplomski sa ocenom 10, a profesor je posebno pohvalio izgled mog rada! Topla preporuka za ovu štampariju i divne ljude koji rade u njoj! <3",
+  "datum": {
+    "$date": "2026-09-22T18:22:24.939Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80693"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Uzela sam je kao poklon mlađoj sestri sa našom zajedničkom fotografijom i bila je oduševljena. Boje su ispale baš lepo.",
+  "datum": {
+    "$date": "2026-08-25T17:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80694"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Slagalica je stigla uredno odštampana, a sitni detalji na fotografiji se stvarno vide. Baš lep personalizovan poklon.",
+  "datum": {
+    "$date": "2026-08-26T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80695"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Poručila sam je za rođendan drugarici i završile smo je iste večeri. Definitivno mnogo ličniji poklon od nečega kupljenog nasumično.",
+  "datum": {
+    "$date": "2026-08-27T19:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80696"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Fotografija nije izgubila kvalitet u štampi, čega sam se najviše plašila. Deluje čvrsto i lepo je isečena.",
+  "datum": {
+    "$date": "2026-08-28T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80697"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Napravili smo porodičnu fotografiju kao slagalicu i klinci su se baš zabavili. Ideja je pun pogodak za poklon.",
+  "datum": {
+    "$date": "2026-08-29T21:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80698"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "SLG-001",
+  "tekst": "Baš simpatično izgleda uživo. Sledeći put bih samo izabrala fotografiju sa malo svetlijom pozadinom, ali izrada je odlična.",
+  "datum": {
+    "$date": "2026-08-30T22:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d80699"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Korice su ispale lepše nego što sam očekivala, a grafikoni u boji su ostali jasni. Preporuka za završne radove.",
+  "datum": {
+    "$date": "2026-08-28T17:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069a"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Uzela sam nekoliko primeraka za komisiju i svi su bili jednako uredno urađeni. Baš mi je značilo pred odbranu.",
+  "datum": {
+    "$date": "2026-08-29T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069b"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Papir i povez deluju kvalitetno, ništa se nije odlepilo ni posle dosta listanja. Vrlo zadovoljna.",
+  "datum": {
+    "$date": "2026-08-30T19:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069c"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Rad je izgledao ozbiljno i uredno, bez pomerenih margina ili čudnih boja na slikama. To mi je bilo najvažnije.",
+  "datum": {
+    "$date": "2026-08-31T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069d"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "DPL-002",
+  "tekst": "Brinula sam kako će izgledati tabele i slike, ali su ispale odlično. Lep završni detalj posle toliko meseci pisanja.",
+  "datum": {
+    "$date": "2026-09-01T21:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069e"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Poster sam uramila čim je stigao i sada mi je iznad radnog stola. Boje su mnogo lepše nego na mom starom kućnom štampaču.",
+  "datum": {
+    "$date": "2026-08-31T17:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d8069f"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Štampala sam svoju ilustraciju i detalji su ostali baš oštri. A3 format mi je taman za zid.",
+  "datum": {
+    "$date": "2026-09-01T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a0"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Bio je poklon za drugaricu koja se uselila u novi stan i pogodila sam skroz. Izgleda kao nešto iz male art prodavnice.",
+  "datum": {
+    "$date": "2026-09-02T19:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a1"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Crne površine su ispale ravnomerno, bez čudnih pruga. To mi je obično problem kod postera, ovde nije.",
+  "datum": {
+    "$date": "2026-09-03T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a2"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Fotografija sa putovanja sada konačno nije samo u telefonu. Vrlo lepa štampa i prijatan papir.",
+  "datum": {
+    "$date": "2026-09-04T21:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a3"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "PST-001",
+  "tekst": "Uzela sam dva različita dizajna i oba su ispala verno fajlovima koje sam poslala. Rado bih ponovo poručila.",
+  "datum": {
+    "$date": "2026-09-05T22:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a4"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Ceger sam napravila sa crtežom koji mi je nacrtala sestra i ispao je presladak. Nosim ga skoro svaki dan.",
+  "datum": {
+    "$date": "2026-09-03T17:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a5"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Štampa se lepo drži i posle više nošenja, a boje su ostale jake. Baš sam zadovoljna kako je motiv prenet.",
+  "datum": {
+    "$date": "2026-09-04T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a6"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Poručila sam nekoliko cegera za malu studentsku ekipu i svi su bili oduševljeni. Mnogo lepše od generičnog mercha.",
+  "datum": {
+    "$date": "2026-09-05T19:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a7"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Motiv je centriran kako treba i nije ispao ni prevelik ni premali. Deluje baš uredno.",
+  "datum": {
+    "$date": "2026-09-06T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a8"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Bio je mali poklon za drugaricu i odmah ga je ponela sutradan. Personalizacija stvarno napravi razliku.",
+  "datum": {
+    "$date": "2026-09-07T21:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806a9"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "CGR-002",
+  "tekst": "Fotografija na cegeru je ispala jasnije nego što sam očekivala. Sledeći put definitivno pravim jedan i za sebe.",
+  "datum": {
+    "$date": "2026-09-08T22:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806aa"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Uzela sam nekoliko obeleživača kao dodatak uz knjige za poklon i bili su baš slatki. Mali detalj, ali deluje lično.",
+  "datum": {
+    "$date": "2026-09-06T17:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806ab"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Fotografija i kratka poruka su ostale čitljive iako je format mali. Mnogo mi se dopada kako je ispalo.",
+  "datum": {
+    "$date": "2026-09-07T18:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806ac"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Koristim ga već neko vreme i nije se izgužvao kao obični papirni obeleživači koje sam ranije imala.",
+  "datum": {
+    "$date": "2026-09-08T19:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806ad"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Napravila sam jedan sa omiljenim citatom za drugaricu koja stalno čita. Bio je možda njen omiljeni deo poklona.",
+  "datum": {
+    "$date": "2026-09-09T20:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806ae"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Boje su nežne i štampa je precizna. Baš lepo izgleda između stranica, a nije glomazan.",
+  "datum": {
+    "$date": "2026-09-10T21:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab2fd8a5c6c12dbb0d806af"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "sifra_proizvoda": "OBL-001",
+  "tekst": "Poručila sam različite dizajne za nekoliko prijatelja i svaki je ispao uredno. Super ideja za mali poklon.",
+  "datum": {
+    "$date": "2026-09-11T22:30:00.000Z"
+  }
+}]

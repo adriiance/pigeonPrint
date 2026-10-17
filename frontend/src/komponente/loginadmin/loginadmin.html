@@ -1,0 +1,116 @@
+<div class="admin-page">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="PigeonPrint početna strana">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-name">PigeonPrint</span>
+    </a>
+
+    <div class="admin-badge">
+      <span class="badge-dot" aria-hidden="true"></span>
+      ADMIN PORTAL
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="intro-panel" aria-labelledby="admin-welcome-title">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        PIGEONPRINT • CONTROL DESK
+      </div>
+
+      <h1 id="admin-welcome-title">Dobrodošli u komandni centar.</h1>
+
+      <p class="intro-copy">
+        Administratorski pristup za odobravanje naloga, upravljanje korisnicima i održavanje PigeonPrint sistema urednim.
+      </p>
+
+      <div class="admin-scene" aria-hidden="true">
+        <div class="folder folder-back"></div>
+        <div class="folder folder-front">
+          <span class="folder-tab">ADMIN FILES</span>
+          <div class="document-line line-long"></div>
+          <div class="document-line"></div>
+          <div class="document-line line-short"></div>
+          <div class="approval-stamp">APPROVED<br><small>PP</small></div>
+        </div>
+
+        <div class="pigeon-mascot"></div>
+
+        <div class="desk-note">
+          <span>CHIEF PIGEON</span>
+          <strong>On duty.</strong>
+        </div>
+      </div>
+
+      <div class="mini-note">
+        <span class="mini-note-icon">✦</span>
+        <span>Ovlašćen pristup — za golubove sa značkom.</span>
+      </div>
+    </section>
+
+    <section class="admin-card" aria-labelledby="admin-login-title">
+      <div class="card-heading">
+        <span class="card-label">ADMINISTRATORSKI PRISTUP</span>
+        <h2 id="admin-login-title">Admin prijava</h2>
+        <p>Unesi administratorske podatke za pristup kontrolnom panelu.</p>
+      </div>
+
+      <form (ngSubmit)="login()" #adminLoginForm="ngForm" novalidate>
+        <label class="field-label" for="admin-username">Korisničko ime</label>
+        <div class="input-wrap">
+          <span class="input-icon" aria-hidden="true">@</span>
+          <input
+            id="admin-username"
+            name="korisnicko_ime"
+            type="text"
+            [(ngModel)]="korisnicko_ime"
+            autocomplete="username"
+            placeholder="npr. chiefPigeon"
+            required>
+        </div>
+
+        <label class="field-label" for="admin-password">Lozinka</label>
+        <div class="input-wrap">
+          <span class="input-icon lock-icon" aria-hidden="true">●</span>
+          <input
+            id="admin-password"
+            name="lozinka"
+            type="password"
+            [(ngModel)]="lozinka"
+            autocomplete="current-password"
+            placeholder="Unesi lozinku"
+            required>
+        </div>
+
+        @if (poruka) {
+          <div class="error-message" role="alert">
+            <span class="error-icon" aria-hidden="true">!</span>
+            <span>{{poruka}}</span>
+          </div>
+        }
+
+        <button class="login-button" type="submit" [disabled]="adminLoginForm.invalid">
+          <span>Uđi u admin panel</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="divider"><span>ADMIN ONLY</span></div>
+
+      <a class="back-link" href="/">
+        <span aria-hidden="true">←</span>
+        Nazad na korisničku prijavu
+      </a>
+
+      <div class="security-note">
+        <span aria-hidden="true">✓</span>
+        Ova stranica je namenjena isključivo administratorima sistema.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>Administrative correspondence handled by Chief Pigeon.</span>
+  </footer>
+</div>

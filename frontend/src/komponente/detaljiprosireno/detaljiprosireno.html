@@ -1,0 +1,185 @@
+<div class="details-page">
+  <header class="site-header">
+    <a class="brand" routerLink="/pocetna">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </a>
+
+    <button class="back-link" (click)="nazad()">← Nazad na proizvode</button>
+  </header>
+
+  <main class="details-shell">
+    <section class="gallery-panel">
+      <div class="gallery-kicker">PIGEON PICK · {{proizvod.sifra}}</div>
+
+      <div class="main-image-frame">
+        @if(izabranaSlika){
+          <img [src]="izabranaSlika" [alt]="proizvod.naziv">
+        } @else {
+          <div class="image-placeholder">PRINT<br>PREVIEW</div>
+        }
+        <span class="photo-stamp">PP</span>
+      </div>
+
+      @if(galerija.length > 1){
+        <div class="thumbnail-row" aria-label="Galerija proizvoda">
+          @for(slika of galerija; track slika){
+            <button class="thumbnail" [class.active]="izabranaSlika === slika" (click)="promeniSliku(slika)">
+              <img [src]="slika" [alt]="proizvod.naziv + ' - dodatna slika'">
+            </button>
+          }
+        </div>
+      }
+
+      <p class="gallery-note">Klikni na malu sliku da promeniš glavni prikaz.</p>
+
+      <div class="printer-card printer-card-map">
+        <span class="printer-label">ŠTAMPA I ŠALJE</span>
+        <strong>{{proizvod.naziv_stamparije}}</strong>
+        <span class="location">⌖ {{adresa}}, {{grad}}</span>
+        <div id="mapa" class="mapa"></div>
+      </div>
+    </section>
+
+    <section class="product-panel">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>{{proizvod.kategorija}}</div>
+      <span class="subcategory">{{proizvod.potkategorija}}</span>
+
+      <h1>{{proizvod.naziv}}</h1>
+
+      <div class="reaction-row">
+        <span class="reaction like">❤️ {{proizvod.broj_lajkova}}</span>
+        <span class="reaction dislike">👎 {{proizvod.broj_dislajkova}}</span>
+      </div>
+
+      <p class="description">{{proizvod.opis}}</p>
+
+      <div class="price-card">
+        <span>Cena za 1 komad</span>
+        <strong>{{proizvod.jedinicna_cena}} RSD</strong>
+      </div>
+
+      <div class="info-block">
+        <div class="info-heading">
+          <span class="mini-kicker">INK & PAPER</span>
+          <h2>Dostupne boje</h2>
+        </div>
+        <div class="color-list">
+          @for(boja of proizvod.boje; track boja){
+            <span class="color-chip">
+              <span class="color-square" [style.background-color]="bojaCSS(boja)"></span>
+              {{boja}}
+            </span>
+          }
+        </div>
+        <div class="choice-field">
+          <label for="izborBoje">Izaberi boju za svoj proizvod</label>
+          <div class="select-wrap color-select-wrap">
+            <span class="selected-color" [style.background-color]="bojaCSS(izabranaBoja)"></span>
+            <select id="izborBoje" [(ngModel)]="izabranaBoja">
+              @for(boja of proizvod.boje; track boja){
+                <option [value]="boja">{{boja}}</option>
+              }
+              @if(proizvod.boje.length===0 || izabranaBoja=="bela"){
+                <option value="bela">Bela</option>
+              }
+            </select>
+          </div>
+          <span class="choice-hint">Ova boja će biti sačuvana uz stavku u tvojoj korpi.</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-heading">
+          <span class="mini-kicker">PRINT OPTIONS</span>
+          <h2>Usluge štampe</h2>
+        </div>
+
+        <div class="services-list">
+          @for(usluga of proizvod.usluge_stampe; track usluga.naziv){
+            <article class="service-card">
+              <div>
+                <strong>{{usluga.naziv}}</strong>
+                <span>maks. {{usluga.max_sirina_mm}} × {{usluga.max_visina_mm}} mm</span>
+              </div>
+              <b>+{{usluga.dodatna_cena_po_komadu}} RSD / kom</b>
+            </article>
+          }
+        </div>
+        <div class="choice-field">
+          <label for="izborUsluge">Izaberi uslugu štampe</label>
+          <div class="select-wrap">
+            <select id="izborUsluge" [(ngModel)]="izabranaUsluga">
+              @for(usluga of proizvod.usluge_stampe; track usluga.naziv){
+                <option [value]="usluga.naziv">{{usluga.naziv}}</option>
+              }
+            </select>
+          </div>
+          <span class="choice-hint">Cena izabrane usluge biće uračunata po komadu na sledećem koraku.</span>
+        </div>
+      </div>
+      <div class="continue-card">
+        <div>
+          <span class="mini-kicker">READY TO PREP?</span>
+          <strong>Boja i štampa su izabrane.</strong>
+          <p>Na sledećem koraku biraš količinu, proveravaš konačnu cenu i dodaješ proizvod u e-korpu.</p>
+        </div>
+        <button class="continue-button" type="button" (click)="kupovina()" [disabled]="!izabranaUsluga">
+          Dalje na pripremu <span>→</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+
+  <section class="comments-section">
+    <div class="comments-heading">
+      <div>
+        <span class="comments-kicker">IZ GOLUBARNIKA</span>
+        <h2>Poslednji komentari</h2>
+      </div>
+      <span class="comments-count">poslednjih {{komentari.length}} / 5</span>
+    </div>
+
+    <div class="comments-body">
+      <div class="comments-content">
+    @if(komentari.length > 0){
+      <div class="comments-list">
+        @for(komentar of komentari; track komentar){
+          <article class="comment-card" [class.my-comment]="mojKomentar(komentar)">
+            <div class="comment-top">
+              <strong>@{{komentar.korisnicko_ime}}</strong>
+              <span>{{formatirajDatum(komentar.datum)}}</span>
+            </div>
+            <p>{{komentar.tekst}}</p>
+            @if(mojKomentar(komentar)){
+              <span class="my-comment-label">tvoj komentar</span>
+            }
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="no-comments">
+        <span>✎</span>
+        <div>
+          <strong>Još nema komentara.</strong>
+          <p>Ovaj proizvod još čeka svoju prvu poruku.</p>
+        </div>
+      </div>
+    }
+      </div>
+
+      <div class="pigeon-corner" aria-hidden="true">
+    <div class="pigeon-note">picked with care by<br><strong>PigeonPrint</strong></div>
+    <div class="pigeon-mascot"></div>
+  </div>
+    </div>
+  </section>
+<footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

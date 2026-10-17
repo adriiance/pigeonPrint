@@ -1,0 +1,562 @@
+<div class="printer-page">
+  <header class="site-header">
+    <button class="brand" type="button" (click)="ruter.navigate(['pocetna'])">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">ink, paper & city pigeons</span>
+      </span>
+    </button>
+
+    <div class="header-actions">
+      <span class="printer-pill">ŠTAMPARIJA · {{naziv_institucije}}</span>
+      <button class="back-link" type="button" style="cursor:pointer ;" (click)="ruter.navigate([''])">
+        ← Početna
+      </button>
+      <button class="logout-button" type="button" (click)="logout()">
+        Odjavi se
+      </button>
+    </div>
+  </header>
+
+  <main class="printer-shell">
+    <section class="printer-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">ŠTAMPARSKI PULT</span>
+        <h1>Zdravo, {{ime || korisnicko_ime}}.</h1>
+        <p>
+          Na jednom mestu vodi podatke štamparije, uređuj ponudu i stanje proizvoda,
+          a zatim prati porudžbine i javne nabavke.
+        </p>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <span>PRINTED WITH CARE</span>
+        <strong>PP</strong>
+        <small>{{naziv_institucije || 'PigeonPrint studio'}}</small>
+      </div>
+    </section>
+
+    <nav class="dashboard-nav" aria-label="Sekcije štampara">
+  <button type="button" (click)="skrolujDo('profil')">
+    01 · Profil
+  </button>
+
+  <button type="button" (click)="skrolujDo('proizvodi')">
+    02 · Proizvodi
+  </button>
+
+  <button type="button" (click)="skrolujDo('porudzbine')">
+    03 · Porudžbine
+  </button>
+
+  <button type="button" (click)="skrolujDo('nabavke')">
+    04 · Javne nabavke
+  </button>
+</nav>
+
+    <section class="dashboard-section" id="profil">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">01 · MOJ PROFIL</span>
+          <h2>Podaci štamparije</h2>
+          <p>Kontakt podaci odgovornog lica i osnovni podaci tvoje štamparije.</p>
+        </div>
+
+        @if(!menjanjeAktivno){
+          <button class="secondary-button" type="button" (click)="promeniPodatke()">
+            Izmeni podatke
+          </button>
+        }
+      </div>
+
+      @if(poruka){
+        <div class="message" [class.success-message]="poruka.includes('Uspešno') || poruka.includes('Uspesno')">
+          {{poruka}}
+        </div>
+      }
+
+      <div class="profile-card">
+        <div class="photo-column">
+          <div class="profile-photo-wrap">
+            <img
+              class="profile-photo"
+              [src]="previewProfilne || putanjaProfilne(profilna)"
+              alt="Profilna slika">
+            <span class="photo-badge">{{korisnicko_ime.charAt(0).toUpperCase()}}</span>
+          </div>
+
+          <div class="identity">
+            <strong>{{ime}} {{prezime}}</strong>
+            <span>@{{korisnicko_ime}}</span>
+            <small>{{naziv_institucije}}</small>
+          </div>
+
+          @if(menjanjeAktivno){
+            <label class="upload-button" for="profile-image">Promeni profilnu</label>
+            <input
+              class="file-input"
+              id="profile-image"
+              type="file"
+              accept=".jpg,.jpeg,.png,.gif"
+              (change)="onFileSelected($event)">
+            <p class="upload-note">JPG, PNG ili GIF · 100×100 do 250×250 px</p>
+
+            @if(porukaProfilna){
+              <p class="field-error">{{porukaProfilna}}</p>
+            }
+          }
+        </div>
+
+        <div class="details-column">
+          <div class="readonly-field">
+            <span>Korisničko ime</span>
+            <strong>{{korisnicko_ime}}</strong>
+            <small>ne može da se menja</small>
+          </div>
+
+          @if(menjanjeAktivno){
+            <div class="form-grid">
+              <div class="form-group-title">Odgovorno lice</div>
+
+              <label class="field">
+                <span>Ime</span>
+                <input type="text" [(ngModel)]="ime">
+              </label>
+
+              <label class="field">
+                <span>Prezime</span>
+                <input type="text" [(ngModel)]="prezime">
+              </label>
+
+              <label class="field">
+                <span>Telefon</span>
+                <input type="text" [(ngModel)]="telefon">
+              </label>
+
+              <label class="field">
+                <span>E-mail</span>
+                <input type="email" [(ngModel)]="mejl">
+              </label>
+
+              <div class="form-group-title institution-title">Štamparija</div>
+
+              <label class="field field-wide">
+                <span>Naziv štamparije</span>
+                <input type="text" [(ngModel)]="naziv_institucije">
+              </label>
+
+              <label class="field">
+                <span>Adresa sedišta</span>
+                <input type="text" [(ngModel)]="adresa_sedista">
+              </label>
+
+              <label class="field">
+                <span>Grad</span>
+                <input type="text" [(ngModel)]="grad">
+              </label>
+
+              <label class="field">
+                <span>Matični broj</span>
+                <input type="text" [(ngModel)]="maticni_broj" maxlength="8" inputmode="numeric">
+                @if(porukaMB){
+                  <small class="field-error">{{porukaMB}}</small>
+                }
+              </label>
+
+              <label class="field">
+                <span>PIB</span>
+                <input type="text" [(ngModel)]="pib" maxlength="9" inputmode="numeric">
+                @if(porukaPIB){
+                  <small class="field-error">{{porukaPIB}}</small>
+                }
+              </label>
+            </div>
+
+            <div class="edit-actions">
+              <button class="ghost-button" type="button" (click)="odustaniOdIzmena()">Odustani</button>
+              <button class="primary-button" type="button" (click)="azurirajPodatke()">Sačuvaj izmene →</button>
+            </div>
+          }
+          @else{
+            <div class="data-grid">
+              <div class="data-group-title">Odgovorno lice</div>
+
+              <div class="data-item">
+                <span>Ime i prezime</span>
+                <strong>{{ime}} {{prezime}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>Telefon</span>
+                <strong>{{telefon}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>E-mail</span>
+                <strong>{{mejl}}</strong>
+              </div>
+
+              <div class="data-group-title institution-title">Štamparija</div>
+
+              <div class="data-item data-item-wide">
+                <span>Naziv štamparije</span>
+                <strong>{{naziv_institucije}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>Adresa sedišta</span>
+                <strong>{{adresa_sedista}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>Grad</span>
+                <strong>{{grad}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>Matični broj</span>
+                <strong>{{maticni_broj}}</strong>
+              </div>
+
+              <div class="data-item">
+                <span>PIB</span>
+                <strong>{{pib}}</strong>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section" id="proizvodi">
+      <div class="section-heading products-heading">
+        <div>
+          <span class="section-kicker">02 · MOJI PROIZVODI</span>
+          <h2>Ponuda štamparije</h2>
+          <p>Pregledaj proizvode, reakcije kupaca i ažuriraj stanje na lageru.</p>
+        </div>
+
+        <button class="primary-button add-product-button" type="button" (click)="noviProizvod()">
+          + Dodaj novi proizvod
+        </button>
+      </div>
+
+      @if(porukaProizvodi){
+        <div class="message">{{porukaProizvodi}}</div>
+      }
+
+      @if(proizvodi.length > 0){
+        <div class="products-table-wrap">
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th>Šifra</th>
+                <th>Proizvod</th>
+                <th>Kategorija</th>
+                <th>Reakcije</th>
+                <th>Cena</th>
+                <th>Lager</th>
+                <th>Akcija</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for(proizvod of proizvodi; track proizvod.sifra){
+                <tr>
+                  <td><span class="code-badge">{{proizvod.sifra}}</span></td>
+
+                  <td class="product-cell">
+                    <strong>{{proizvod.naziv}}</strong>
+                    <span>{{proizvod.opis}}</span>
+                    <small>{{proizvod.potkategorija}}</small>
+                  </td>
+
+                  <td>
+                    <span class="category-label">{{proizvod.kategorija}}</span>
+                  </td>
+
+                  <td>
+                    <div class="reactions">
+                      <span>♥ {{proizvod.broj_lajkova}}</span>
+                      <span>↓ {{proizvod.broj_dislajkova}}</span>
+                    </div>
+                  </td>
+
+                  <td class="price-cell">{{proizvod.jedinicna_cena}} RSD</td>
+
+                  @if(promenaKolicineAktivna){
+                    <td>
+                      <label class="stock-input">
+                        <span>Nova količina</span>
+                        <input type="number" min="0" [(ngModel)]="novoStanje">
+                      </label>
+                    </td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="table-ghost-button" type="button" (click)="odustaniOdLagera()">
+                          Odustani
+                        </button>
+                        <button class="table-primary-button" type="button" (click)="pormeniStanjeNaLageru(proizvod.sifra)">
+                          Sačuvaj
+                        </button>
+                      </div>
+                    </td>
+                  }
+                  @else{
+                    <td>
+                      <span class="stock-badge" [class.out-of-stock]="proizvod.kolicina_na_lageru == 0">
+                        {{proizvod.kolicina_na_lageru}} kom.
+                      </span>
+                    </td>
+                    <td>
+                      <button class="table-link-button" type="button" (click)="azurirajLager()">
+                        Promeni lager
+                      </button>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+      @else{
+        <div class="empty-state">
+          <span class="empty-number">02</span>
+          <div>
+            <strong>Polica je još prazna.</strong>
+            <p>Dodaj prvi proizvod i napravi ponudu svoje štamparije.</p>
+          </div>
+          <button class="secondary-button" type="button" (click)="noviProizvod()">Dodaj proizvod</button>
+        </div>
+      }
+    </section>
+
+    <section class="dashboard-section" id="porudzbine">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">03 · PORUDŽBINE</span>
+          <h2>Porudžbine fizičkih lica</h2>
+          <p>Pregled porudžbina koje su pristigle tvojoj štampariji.</p>
+        </div>
+      </div>
+
+      @if(fakture.length > 0){
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>Faktura</th>
+                <th>Klijent</th>
+                <th>Datum</th>
+                <th>Proizvodi</th>
+                <th>Ukupno</th>
+                <th>Status</th>
+                <th>Akcija</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for(faktura of fakture; track faktura.id_fakture){
+                <tr>
+                  <td class="invoice-cell">
+                    <strong>#{{faktura.id_fakture}}</strong>
+                  </td>
+
+                  <td class="client-cell">
+                    <strong>@{{faktura.korisnicko_ime_klijenta}}</strong>
+                  </td>
+
+                  <td class="date-cell">
+                    {{faktura.datum | date:'dd.MM.yyyy.'}}<br>
+                    <small>{{faktura.datum | date:'HH:mm'}}</small>
+                  </td>
+
+                  <td class="order-products-cell">
+                    @for(stavka of faktura.stavke; track $index){
+                      <div class="order-product-line">
+                        <div>
+                          <strong>{{stavka.nazivProizvoda}}</strong>
+                          <small>
+                            @if(stavka.boja){
+                              <span>Boja: {{stavka.boja}}</span>
+                            }
+                            @if(stavka.tipStampe){
+                              <span>Štampa: {{stavka.tipStampe}}</span>
+                            }
+                          </small>
+                        </div>
+                        <span class="order-product-quantity">× {{stavka.kolicina}}</span>
+                      </div>
+                    }
+                  </td>
+
+                  <td class="order-total-cell">
+                    {{faktura.ukupni_iznos}} RSD
+                  </td>
+
+                  <td>
+                    <span
+                      class="order-status"
+                      [class.status-ordered]="faktura.status === 'naruceno'"
+                      [class.status-printing]="faktura.status === 'u stampi'"
+                      [class.status-delivered]="faktura.status === 'isporuceno'"
+                      [class.status-cancelled]="faktura.status === 'otkazano'">
+                      {{faktura.status}}
+                    </span>
+                  </td>
+
+                  <td class="order-action-cell">
+
+      @if(faktura.status == "naruceno"){
+        <button
+          type="button"
+           class="table-link-button"
+          (click)="akcija(faktura.id_fakture)">
+          Prihvati porudžbinu
+        </button>
+      }
+
+      @else if(faktura.status == "u stampi"){
+        <button
+          type="button"
+           class="table-link-button"
+          (click)="akcija(faktura.id_fakture)">
+          Označi kao isporučeno
+        </button>
+      }
+
+      @else {
+        <span class="no-action">—</span>
+      }
+
+    </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+      @else{
+        <div class="empty-state">
+          <span class="empty-number">03</span>
+          <div>
+            <strong>Još nema pristiglih porudžbina.</strong>
+            <p>Kada fizičko lice poruči proizvod iz tvoje štamparije, porudžbina će se pojaviti ovde.</p>
+          </div>
+        </div>
+      }
+    </section>
+
+    <section class="dashboard-section" id="nabavke">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">04 · JAVNE NABAVKE</span>
+          <h2>Otvorene licitacije</h2>
+          <p>Pregled javnih nabavki pravnih lica i ponuda štamparije.</p>
+        </div>
+      </div>
+
+      @if(porukaNabavke){
+        <div class="message">{{porukaNabavke}}</div>
+      }
+
+      @if(javneNabavke.length > 0){
+        <div class="procurement-table-wrap">
+          <table class="procurement-table">
+            <thead>
+              <tr>
+                <th>Nabavka</th>
+                <th>Institucija</th>
+                <th>Datum</th>
+                <th>Traženi proizvodi</th>
+                <th>Status</th>
+                <th>Ponuda</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(nabavka of javneNabavke; track nabavka.id_nabavke){
+                <tr>
+                  <td class="procurement-table-id">#{{nabavka.id_nabavke}}</td>
+                  <td class="procurement-table-institution"><strong>{{nabavka.naziv_institucije}}</strong></td>
+                  <td class="procurement-table-date">
+                    {{nabavka.datum | date:'dd.MM.yyyy.'}}<br>
+                    <small>{{nabavka.datum | date:'HH:mm'}}</small>
+                  </td>
+                  <td class="procurement-table-items">
+                    @for(stavka of nabavka.stavke; track $index){
+                      <div class="procurement-table-item">
+                        <span>{{stavka.nazivProizvoda}}</span>
+                        <strong>× {{stavka.kolicina}}</strong>
+                      </div>
+                    }
+                  </td>
+                  <td><span class="status-badge">{{nabavka.status}}</span></td>
+                  <td class="procurement-table-action">
+                    @if(moguDaDamPonudu(nabavka.id_nabavke)){
+                      <div class="table-offer">
+                        <div class="table-offer-input">
+                          <input type="number" min="1" #ponudaInput placeholder="Iznos">
+                          <span>RSD</span>
+                        </div>
+                        <button
+                          type="button"
+                          class="table-link-button"
+                          (click)="dajPonudu(nabavka.id_nabavke, ponudaInput.valueAsNumber)">
+                          Pošalji ponudu
+                        </button>
+                      </div>
+                    }
+                    @else {
+
+  @if(mojaPonuda(nabavka.id_nabavke) > 0){
+
+    <div class="offer-already-sent">
+      <span>Već ste dali ponudu: </span>
+      <strong>{{mojaPonuda(nabavka.id_nabavke)}} RSD</strong>
+    </div>
+
+  }
+
+                    @else {
+
+                      <span class="offer-unavailable">
+                        Ne možete dati ponudu
+                      </span>
+
+                    }
+
+                  }
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+      @else {
+        <div class="procurement-empty-state">
+          <div class="procurement-empty-illustration" aria-hidden="true">
+            <span class="procurement-empty-stamp">04</span>
+            <img src="products/pigeon.png" alt="">
+          </div>
+
+          <div class="procurement-empty-copy">
+            <span class="procurement-empty-kicker">LICITACIJSKI PULT JE TRENUTNO MIRAN</span>
+            <h3>Trenutno nema otvorenih javnih nabavki.</h3>
+            <p>
+              Nove javne nabavke pojaviće se ovde čim ih pravna lica kreiraju.
+              Tada možeš da pregledaš tražene proizvode i pošalješ ponudu.
+            </p>
+          </div>
+        </div>
+      }
+
+    </section>
+  </main>
+    <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

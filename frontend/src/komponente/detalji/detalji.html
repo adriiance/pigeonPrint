@@ -1,0 +1,117 @@
+<div class="details-page">
+  <header class="site-header">
+    <a class="brand" routerLink="/pocetna">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </a>
+
+    <button class="back-link" (click)="nazad()">← Nazad na proizvode</button>
+  </header>
+
+  <main class="details-shell">
+    <section class="gallery-panel">
+      <div class="gallery-kicker">PIGEON PICK · {{proizvod.sifra}}</div>
+
+      <div class="main-image-frame">
+        @if(izabranaSlika){
+          <img [src]="izabranaSlika" [alt]="proizvod.naziv">
+        } @else {
+          <div class="image-placeholder">PRINT<br>PREVIEW</div>
+        }
+        <span class="photo-stamp">PP</span>
+      </div>
+
+      @if(galerija.length > 1){
+        <div class="thumbnail-row" aria-label="Galerija proizvoda">
+          @for(slika of galerija; track slika){
+            <button class="thumbnail" [class.active]="izabranaSlika === slika" (click)="promeniSliku(slika)">
+              <img [src]="slika" [alt]="proizvod.naziv + ' - dodatna slika'">
+            </button>
+          }
+        </div>
+      }
+
+      <p class="gallery-note">Klikni na malu sliku da promeniš glavni prikaz.</p>
+    </section>
+
+    <section class="product-panel">
+      <div class="eyebrow"><span class="eyebrow-dot"></span>{{proizvod.kategorija}}</div>
+      <span class="subcategory">{{proizvod.potkategorija}}</span>
+
+      <h1>{{proizvod.naziv}}</h1>
+
+      <div class="reaction-row">
+        <span class="reaction like">❤️ {{proizvod.broj_lajkova}}</span>
+        <span class="reaction dislike">👎 {{proizvod.broj_dislajkova}}</span>
+      </div>
+
+      <div class="printer-card">
+        <span class="printer-label">ŠTAMPA I ŠALJE</span>
+        <strong>{{proizvod.naziv_stamparije}}</strong>
+        <span class="location">⌖ {{grad}}</span>
+      </div>
+
+      <div class="public-note">
+        <span class="note-stamp">INFO</span>
+        <div>
+          <strong>Želiš više detalja?</strong>
+          <p>Ulogovani klijenti mogu videti cenu, dostupne boje i opcije štampe.</p>
+        </div>
+      </div>
+
+      <button type="button" class="login-cta" (click)="prijava()">Prijavi se za proširene detalje <span>→</span></button>
+    </section>
+  </main>
+
+
+  <section class="comments-section">
+    <div class="comments-heading">
+      <div>
+        <span class="comments-kicker">IZ GOLUBARNIKA</span>
+        <h2>Poslednji komentari</h2>
+      </div>
+      <span class="comments-count">poslednjih {{komentari.length}} / 5</span>
+    </div>
+
+    <div class="comments-body">
+      <div class="comments-content">
+    @if(komentari.length > 0){
+      <div class="comments-list">
+        @for(komentar of komentari; track komentar){
+          <article class="comment-card" [class.my-comment]="mojKomentar(komentar)">
+            <div class="comment-top">
+              <strong>@{{komentar.korisnicko_ime}}</strong>
+              <span>{{formatirajDatum(komentar.datum)}}</span>
+            </div>
+            <p>{{komentar.tekst}}</p>
+            @if(mojKomentar(komentar)){
+              <span class="my-comment-label">tvoj komentar</span>
+            }
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="no-comments">
+        <span>✎</span>
+        <div>
+          <strong>Još nema komentara.</strong>
+          <p>Ovaj proizvod još čeka svoju prvu poruku.</p>
+        </div>
+      </div>
+    }
+      </div>
+
+      <div class="pigeon-corner" aria-hidden="true">
+    <div class="pigeon-note">approved by the<br><strong>print pigeon</strong></div>
+    <div class="pigeon-mascot"></div>
+  </div>
+    </div>
+  </section>
+<footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

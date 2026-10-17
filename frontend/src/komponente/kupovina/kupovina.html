@@ -1,0 +1,100 @@
+<div class="purchase-page">
+  <header class="site-header">
+    <button class="brand" type="button" (click)="nastaviKupovinu()">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </button>
+    <button class="back-link" type="button" (click)="nazad()">← Nazad na detalje</button>
+  </header>
+
+  <main class="purchase-shell">
+    <section class="intro-column">
+      <span class="kicker">FINAL TOUCHES · {{proizvod.sifra}}</span>
+      <h1>Još samo malo<br><em>do korpe.</em></h1>
+      <p class="intro-text">Proveri izabrane opcije, odredi količinu i PigeonPrint golub je spreman da sačuva tvoju stavku u korpi.</p>
+
+      <div class="pigeon-stage" aria-hidden="true">
+        <div class="pigeon-note">packed with care by<br><strong>PigeonPrint</strong></div>
+        <div class="pigeon-mascot"></div>
+      </div>
+    </section>
+
+    <section class="purchase-card">
+      <div class="product-summary">
+        <div class="product-image">
+          @if(proizvod.glavna_slika){
+            <img [src]="putanjaSlike(proizvod.glavna_slika)" [alt]="proizvod.naziv">
+          } @else {
+            <span>PP</span>
+          }
+        </div>
+        <div>
+          <span class="mini-kicker">TVOJ IZBOR</span>
+          <h2>{{proizvod.naziv}}</h2>
+          <span class="base-price">Osnovna cena · {{proizvod.jedinicna_cena}} RSD / kom</span>
+        </div>
+      </div>
+
+      <div class="chosen-options">
+        <div class="option-row">
+          <span>Boja</span>
+          <strong>{{izabranaBoja}}</strong>
+        </div>
+        <div class="option-row">
+          <span>Usluga štampe</span>
+          <strong>{{izabranaUsluga}}</strong>
+        </div>
+        <div class="option-row">
+          <span>Dodatak za štampu</span>
+          <strong>+{{dodatnaCena()}} RSD / kom</strong>
+        </div>
+      </div>
+
+      <div class="quantity-block">
+        <label for="kolicina">Količina</label>
+        <p>Na stanju: <strong>{{proizvod.kolicina_na_lageru}}</strong> kom.</p>
+        <div class="quantity-control" [class.input-error]="porukaKolicina">
+          <input id="kolicina" type="number" [(ngModel)]="kolicina" min="1" [max]="proizvod.kolicina_na_lageru" step="1">
+          <span>kom.</span>
+        </div>
+        @if(porukaKolicina){
+          <p class="quantity-error">{{porukaKolicina}}</p>
+        }
+      </div>
+
+      <div class="total-card">
+        <div>
+          <span>Cena po komadu sa štampom</span>
+          <strong>{{proizvod.jedinicna_cena+dodatnaCena()}} RSD</strong>
+        </div>
+        <div class="grand-total">
+          <span>Ukupno</span>
+          <strong>{{ukupnaCena()}} RSD</strong>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="secondary-button" type="button" (click)="ponisti()">Poništi</button>
+        <button class="primary-button" type="button" (click)="korpa()">Dodaj u korpu <span>→</span></button>
+      </div>
+
+      @if(poruka){
+        <div class="message action-message" [class.success]="uspesnoDodato">{{poruka}}</div>
+      }
+
+      @if(uspesnoDodato){
+        <div class="after-add">
+          <button type="button" (click)="nastaviKupovinu()">Nastavi kupovinu</button>
+          <button type="button" class="cart-link" (click)="otvoriKorpu()">Otvori korpu 🛒</button>
+        </div>
+      }
+    </section>
+  </main>
+    <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

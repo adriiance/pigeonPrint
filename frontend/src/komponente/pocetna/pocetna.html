@@ -1,0 +1,229 @@
+<div class="home-page">
+  <header class="site-header">
+    <a class="brand" routerLink="/pocetna">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Glavna navigacija">
+      <a class="nav-link active" routerLink="/pocetna">Početna</a>
+      <a class="nav-link" href="#proizvodi">Proizvodi</a>
+      <a class="nav-link" href="#top5">Top 5</a>
+
+      @if(ulogovaniKorisnik && ulogovaniKorisnik.korisnicko_ime){
+        <button class="nav-cta profile-button" type="button" (click)="mojProfil()">Moj profil</button>
+      }
+      @else {
+        <a class="nav-link" routerLink="/login">Prijava</a>
+        <a class="nav-cta" routerLink="/registracija">Registruj se</a>
+      }
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          PRINT SHOP DIRECTORY · PIGEON APPROVED
+        </div>
+
+        <h1>Od ideje do papira,<br><em>bez letenja po gradu.</em></h1>
+        <p class="hero-text">
+          PigeonPrint spaja tvoje ideje sa štamparijama koje ih pretvaraju u stvarne,
+          opipljive stvari — od knjiga i postera do razglednica i kreativnih printova.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#proizvodi">Istraži proizvode <span>→</span></a>
+          <a class="secondary-button" href="#top5">Pogledaj najpopularnije</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">{{stamparije.length}}</span>
+            <span class="stat-label">registrovanih<br>štamparija</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">{{dostupniProizvodi.length}}</span>
+            <span class="stat-label">trenutno dostupnih<br>proizvoda</span>
+          </div>
+          <div class="stat-card stat-note">
+            <span class="tiny-stamp">PP</span>
+            <span class="stat-label">mala štampa,<br>velike ideje</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-paper paper-back"></div>
+        <div class="hero-paper editorial-paper">
+          <img src="/products/novine1.png" alt="">
+          <div class="paper-caption">
+            <span>PIGEON POST · VOL. 01</span>
+            <strong>Prints worth cooing about.</strong>
+          </div>
+        </div>
+        <div class="postcard-note">
+          <span>FROM THE DESK OF</span>
+          <strong>PigeonPrint</strong>
+          <small>good ideas travel far</small>
+        </div>
+        <div class="round-stamp">PRINT<br><small>WITH LOVE</small></div>
+        <div class="pigeon-mascot"></div>
+      </div>
+    </section>
+<!--
+    <section class="category-ribbon">
+      <div class="section-heading compact-heading">
+        <span class="section-kicker">BROWSE THE PRINT SHELF</span>
+        <h2>Istraži po kategorijama</h2>
+      </div>
+
+      <div class="category-grid">
+        @for(kategorija of kategorije; track kategorija){
+          <button class="category-card" (click)="izabranaKategorija=$any(kategorija); filterKategorije()">
+            <span class="category-art" [class.books]="kategorija.includes('Knjige')"
+                  [class.creative]="kategorija.includes('Kreativne')"
+                  [class.large]="kategorija.includes('velikih')"
+                  [class.small]="kategorija.includes('malih')"></span>
+            <span class="category-name">{{kategorija}}</span>
+            <span class="category-arrow">↗</span>
+          </button>
+        }
+      </div>
+    </section> -->
+
+    <section class="top-section" id="top5">
+      <div class="top-heading-wrap">
+        <div>
+          <span class="section-kicker light">THE MOST LOVED</span>
+          <h2>TOP 5 proizvoda</h2>
+          <p>Najviše lajkova, najmanje golubijeg premišljanja.</p>
+        </div>
+        <div class="hand-note">community favourites ♡</div>
+      </div>
+
+      <div class="top-grid">
+        @for(proizvod of top5proizvodi; track proizvod.sifra; let i = $index){
+          <article class="top-product-card">
+            <span class="rank-badge">{{i + 1}}</span>
+            <div class="product-image-frame">
+               <img [src]="putanjaSlike(proizvod.glavna_slika)" [alt]="proizvod.naziv">
+
+            </div>
+            <div class="top-product-body">
+              <span class="product-category">{{proizvod.kategorija}}</span>
+              <h3>{{proizvod.naziv}}</h3>
+              <p>{{proizvod.naziv_stamparije}}</p>
+              <div class="product-meta-row">
+                <span>♥ {{proizvod.broj_lajkova}}</span>
+                <button (click)="detalji(proizvod.sifra)">Detalji</button>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="products-section" id="proizvodi">
+      <div class="products-heading">
+        <div>
+          <span class="section-kicker">THE FULL CATALOGUE</span>
+          <h2>Svi dostupni proizvodi</h2>
+          <p>Pronađi savršen print za svoju sledeću priču.</p>
+        </div>
+        <div class="catalog-stamp">OPEN<br><small>FOR PRINT</small></div>
+      </div>
+
+      <div class="filter-bar">
+        <label class="filter-control search-control">
+          <span>Pretraga</span>
+          <div class="input-shell">
+            <span class="search-icon">⌕</span>
+            <input type="search" [(ngModel)]="proizvodPretraga" placeholder="Pretraži po nazivu...">
+          </div>
+        </label>
+
+        <button class="search-button" (click)="pretraga()">Pretraži</button>
+
+        <label class="filter-control">
+          <span>Kategorija</span>
+          <select [(ngModel)]="izabranaKategorija" (change)="filterKategorije()">
+            <option value="">Sve kategorije</option>
+            @for(kategorija of kategorije; track kategorija){
+              <option [value]="kategorija">{{kategorija}}</option>
+            }
+          </select>
+        </label>
+
+        <label class="filter-control">
+          <span>Sortiranje</span>
+          <select [(ngModel)]="tipSortiranja" (change)="sortiraj()">
+            <option value="podrazumevano">Podrazumevano</option>
+            <option value="A-z">A–Z</option>
+            <option value="Z-a">Z–A</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="products-grid">
+        @for(proizvod of prikazProizvodi; track proizvod.sifra){
+          <article class="product-card">
+            <div class="product-photo">
+               <img [src]="putanjaSlike(proizvod.glavna_slika)" [alt]="proizvod.naziv">
+
+              <span class="product-code">{{proizvod.sifra}}</span>
+            </div>
+
+            <div class="product-card-body">
+              <span class="product-category">{{proizvod.potkategorija}}</span>
+              <h3>{{proizvod.naziv}}</h3>
+              <p class="product-description">{{proizvod.opis}}</p>
+              <div class="printer-line">
+                <span>štampa</span>
+                <strong>{{proizvod.naziv_stamparije}}</strong>
+              </div>
+              <div class="product-footer-row">
+                <span class="likes">♥ {{proizvod.broj_lajkova}}</span>
+                <button class="details-button" (click)="detalji(proizvod.sifra)">Detalji <span>→</span></button>
+              </div>
+            </div>
+          </article>
+        } @empty {
+          <div class="empty-state">
+            <div class="empty-pigeon">P</div>
+            <h3>Nema proizvoda koji odgovaraju pretrazi.</h3>
+            <p>Probaj drugi naziv ili izaberi drugu kategoriju.</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="closing-banner">
+      <div class="closing-copy">
+        <span>PRINT · COLLECT · CREATE · REPEAT</span>
+        <h2>Više stvari koje želiš<br>da sačuvaš na papiru.</h2>
+      </div>
+      <div class="closing-postcard">
+        <span>SAME IDEAS</span>
+        <strong>different paper.</strong>
+        <small>PigeonPrint ♡</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" routerLink="/pocetna">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </a>
+    <span class="footer-copy">made for ideas worth printing · 2026</span>
+  </footer>
+</div>

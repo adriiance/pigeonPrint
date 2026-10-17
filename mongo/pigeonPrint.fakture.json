@@ -1,0 +1,226 @@
+[{
+  "_id": {
+    "$oid": "6aa438280fe9c8deafccecd6"
+  },
+  "id_fakture": "1789147176376shortAndSweet",
+  "korisnicko_ime_klijenta": "jennieRubyJane",
+  "korisnicko_ime_stampara": "shortAndSweet",
+  "naziv_stamparije": "EVOlution",
+  "grad_stamparije": "Beograd",
+  "status": "naruceno",
+  "ukupni_iznos": 9630,
+  "datum": {
+    "$date": "2026-09-11T17:19:36.376Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "PST-001",
+      "nazivProizvoda": "Art poster A3",
+      "boja": "Krem",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 9,
+      "jedinicnaCena": 850,
+      "dodatnaCenaStampe": 220,
+      "ukupnaCena": 9630,
+      "_id": {
+        "$oid": "6aa438280fe9c8deafccecd7"
+      },
+      "status": "naruceno"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa438280fe9c8deafccecd9"
+  },
+  "id_fakture": "1789147176377ladyMalfoyBlack",
+  "korisnicko_ime_klijenta": "jennieRubyJane",
+  "korisnicko_ime_stampara": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "grad_stamparije": "Beograd",
+  "status": "isporuceno",
+  "ukupni_iznos": 6890,
+  "datum": {
+    "$date": "2026-09-11T17:19:36.377Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "DPL-002",
+      "nazivProizvoda": "Diplomski rad 50 strana",
+      "boja": "Plava",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 5,
+      "jedinicnaCena": 1200,
+      "dodatnaCenaStampe": 178,
+      "ukupnaCena": 6890,
+      "_id": {
+        "$oid": "6aa438280fe9c8deafccecda"
+      },
+      "status": "primljeno"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab1a01229eb0d11ec308c71"
+  },
+  "id_fakture": "1790025746425-ladyMalfoyBlack",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "korisnicko_ime_stampara": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "grad_stamparije": "Beograd",
+  "status": "u stampi",
+  "ukupni_iznos": 1230,
+  "datum": {
+    "$date": "2026-09-21T21:22:26.425Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "SLG-001",
+      "nazivProizvoda": "Personalizovana slagalica A4",
+      "boja": "Plava",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 4,
+      "jedinicnaCena": 1200,
+      "dodatnaCenaStampe": 250,
+      "ukupnaCena": 5800,
+      "_id": {
+        "$oid": "6ab1a01229eb0d11ec308c4d"
+      },
+      "status": "u stampi"
+    },
+    {
+      "sifraProizvoda": "SKT-001",
+      "nazivProizvoda": "Skripta sa koričenjem",
+      "boja": "Crna",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 6,
+      "jedinicnaCena": 1150,
+      "dodatnaCenaStampe": 275,
+      "ukupnaCena": 8550,
+      "_id": {
+        "$oid": "6ab1a01229eb0d11ec308c4e"
+      },
+      "status": "u stampi"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab2fd6b5c6c12dbb0d8068c"
+  },
+  "id_fakture": "demo-1788696000000-jrj-lmb-1",
+  "korisnicko_ime_klijenta": "jennieRubyJane",
+  "korisnicko_ime_stampara": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "grad_stamparije": "Beograd",
+  "status": "isporuceno",
+  "ukupni_iznos": 2900,
+  "datum": {
+    "$date": "2026-09-06T12:00:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "SLG-001",
+      "nazivProizvoda": "Personalizovana slagalica A4",
+      "boja": "Bela",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 2,
+      "jedinicnaCena": 1200,
+      "dodatnaCenaStampe": 250,
+      "ukupnaCena": 2900,
+      "status": "primljeno"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab2fd6b5c6c12dbb0d8068d"
+  },
+  "id_fakture": "demo-1789041600000-rar-lmb-2",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "korisnicko_ime_stampara": "ladyMalfoyBlack",
+  "naziv_stamparije": "Noble and Most Ancient House of Print",
+  "grad_stamparije": "Beograd",
+  "status": "isporuceno",
+  "ukupni_iznos": 79500,
+  "datum": {
+    "$date": "2026-09-10T12:00:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "BIL-001",
+      "nazivProizvoda": "Bilbord sa personalizovanim dizajnom",
+      "boja": "Bela",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 3,
+      "jedinicnaCena": 24000,
+      "dodatnaCenaStampe": 2500,
+      "ukupnaCena": 79500,
+      "status": "primljeno"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab2ff495c6c12dbb0d806b3"
+  },
+  "id_fakture": "demo-20260908-rar-sas",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "korisnicko_ime_stampara": "shortAndSweet",
+  "naziv_stamparije": "EVOlution",
+  "grad_stamparije": "Beograd",
+  "status": "isporuceno",
+  "ukupni_iznos": 5700,
+  "datum": {
+    "$date": "2026-09-08T10:41:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "PST-001",
+      "nazivProizvoda": "Art poster A3",
+      "boja": "Krem",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 6,
+      "jedinicnaCena": 850,
+      "dodatnaCenaStampe": 220,
+      "ukupnaCena": 6420,
+      "status": "primljeno"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab3c6c33de2573f31a139e9"
+  },
+  "id_fakture": "1790166723876gryffindorPrincess",
+  "korisnicko_ime_klijenta": "jennieRubyJane",
+  "korisnicko_ime_stampara": "gryffindorPrincess",
+  "naziv_stamparije": "S.P.E.W association",
+  "grad_stamparije": "Beograd",
+  "status": "otkazano",
+  "ukupni_iznos": 113580,
+  "datum": {
+    "$date": "2026-09-23T12:32:03.876Z"
+  },
+  "stavke": [
+    {
+      "status": "otkazano",
+      "sifraProizvoda": "BIL-003",
+      "nazivProizvoda": "Fototapete sa personalizovanim dizajnom",
+      "boja": "bela",
+      "tipStampe": "Sito stampa",
+      "kolicina": 3,
+      "jedinicnaCena": 35060,
+      "dodatnaCenaStampe": 2800,
+      "ukupnaCena": 113580,
+      "_id": {
+        "$oid": "6ab3c6c33de2573f31a139ea"
+      }
+    }
+  ],
+  "__v": 0
+}]

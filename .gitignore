@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.angular/
+out-tsc/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Uploaded files created at runtime (keep the default profile image if needed)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

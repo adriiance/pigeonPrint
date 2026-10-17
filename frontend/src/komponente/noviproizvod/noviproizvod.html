@@ -1,0 +1,252 @@
+<div class="product-page">
+  <header class="site-header">
+    <button class="brand" type="button" (click)="nazad()">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">ink, paper & city pigeons</span>
+      </span>
+    </button>
+    <button class="back-link" type="button" (click)="nazad()">← Nazad na profil</button>
+  </header>
+
+  <main class="product-shell">
+    <section class="product-hero">
+      <div>
+        <span class="eyebrow">NOVI PROIZVOD</span>
+        <h1>Dodaj nešto novo u ponudu.</h1>
+        <p>Unesi podatke o proizvodu, slike, dostupne boje i usluge štampe.</p>
+      </div>
+      <div class="hero-stamp" aria-hidden="true">
+        <span>PRINT SHOP</span>
+        <strong>PP</strong>
+      </div>
+    </section>
+
+    @if(poruka){
+      <div class="message" [class.success-message]="poruka.includes('Kreirali ste')">
+        {{poruka}}
+      </div>
+    }
+
+    <section class="form-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">01 · OSNOVNI PODACI</span>
+          <h2>O proizvodu</h2>
+        </div>
+        <span class="required-note">* obavezna polja</span>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>Šifra proizvoda *</span>
+          <input type="text" [(ngModel)]="sifra" placeholder="npr. MAJ-017">
+        </label>
+
+        <label class="field">
+          <span>Naziv proizvoda *</span>
+          <input type="text" [(ngModel)]="naziv" placeholder="npr. Pamučna majica">
+        </label>
+
+        <label class="field field-wide">
+          <span>Opis *</span>
+          <textarea rows="5" [(ngModel)]="opis" placeholder="Opiši proizvod, materijal i namenu..."></textarea>
+        </label>
+
+        <label class="field">
+          <span>Kategorija *</span>
+          <select [(ngModel)]="kategorija" (ngModelChange)="potkategorija=''">
+            <option value="" disabled>Izaberi kategoriju</option>
+            @for(kat of kategorije; track kat.naziv){
+              <option [value]="kat.naziv">{{kat.naziv}}</option>
+            }
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Potkategorija *</span>
+          <select [(ngModel)]="potkategorija" [disabled]="!kategorija">
+            <option value="" disabled>Izaberi potkategoriju</option>
+            @for(kat of kategorije; track kat.naziv){
+              @if(kat.naziv === kategorija){
+                @for(pot of kat.potkategorije; track pot){
+                  <option [value]="pot">{{pot}}</option>
+                }
+              }
+            }
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Jedinična cena (RSD) *</span>
+          <input type="number" min="0" step="1" [(ngModel)]="jedinicna_cena">
+        </label>
+
+        <label class="field">
+          <span>Količina na lageru *</span>
+          <input type="number" min="0" step="1" [(ngModel)]="kolicina">
+        </label>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">02 · SLIKE</span>
+          <h2>Galerija proizvoda</h2>
+        </div>
+        <span class="section-hint">1 glavna + do 3 dodatne</span>
+      </div>
+
+      <div class="upload-grid">
+        <label class="upload-box upload-main">
+          <span class="upload-icon">＋</span>
+          <strong>Glavna slika *</strong>
+          <small>{{glavnaSlika ? glavnaSlika.name : 'Izaberi glavnu sliku'}}</small>
+          <input type="file" accept="image/*" (change)="izabranaGlavnaSlika($event)">
+        </label>
+
+        <label class="upload-box">
+          <span class="upload-icon">＋</span>
+          <strong>Dodatna slika 1</strong>
+          <small>{{dodatnaSlika1 ? dodatnaSlika1.name : 'Opciono'}}</small>
+          <input type="file" accept="image/*" (change)="izabranaDodatnaSlika1($event)">
+        </label>
+
+        <label class="upload-box">
+          <span class="upload-icon">＋</span>
+          <strong>Dodatna slika 2</strong>
+          <small>{{dodatnaSlika2 ? dodatnaSlika2.name : 'Opciono'}}</small>
+          <input type="file" accept="image/*" (change)="izabranaDodatnaSlika2($event)">
+        </label>
+
+        <label class="upload-box">
+          <span class="upload-icon">＋</span>
+          <strong>Dodatna slika 3</strong>
+          <small>{{dodatnaSlika3 ? dodatnaSlika3.name : 'Opciono'}}</small>
+          <input type="file" accept="image/*" (change)="izabranaDodatnaSlika3($event)">
+        </label>
+      </div>
+
+      <p class="helper-text">Glavna slika je obavezna. Dodatne slike su opcione; možeš dodati najviše tri.</p>
+    </section>
+
+    <section class="form-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">03 · BOJE</span>
+          <h2>Dostupne boje</h2>
+        </div>
+        <span class="section-hint">opciono · bez unosa = bela</span>
+      </div>
+
+     <div class="form-group">
+  <label for="boja">Dostupne boje</label>
+
+  <div class="color-add-row">
+    <select
+      id="boja"
+      [(ngModel)]="izabranaBoja"
+      name="izabranaBoja"
+    >
+      <option value="">Izaberite boju</option>
+
+      @for (boja of dostupneBoje; track boja) {
+        <option [value]="boja">
+          {{ boja }}
+        </option>
+      }
+    </select>
+
+    <button
+      type="button"
+      class="small-action-button"
+      (click)="dodajBoju()"
+      [disabled]="izabranaBoja == ''"
+    >
+      + Dodaj
+    </button>
+  </div>
+
+  <p class="field-hint">
+    Ako ne izaberete nijednu boju, podrazumevana boja proizvoda je bela.
+  </p>
+
+</div>
+
+      @if(boje.length > 0){
+        <div class="chip-list">
+          @for(boja of boje; track $index){
+            <span class="color-chip">
+              <i [style.background]="bojaCSS(boja)"></i>
+              {{boja}}
+              <button type="button" class="chip-remove" (click)="boje.splice($index, 1)" aria-label="Ukloni boju">×</button>
+            </span>
+          }
+        </div>
+      }
+      @else{
+        <div class="soft-empty">Nijedna boja nije uneta — podrazumevana boja biće bela.</div>
+      }
+    </section>
+
+    <section class="form-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">04 · USLUGE ŠTAMPE</span>
+          <h2>Usluge za ovaj proizvod</h2>
+        </div>
+        <span class="section-hint">najmanje 1 usluga</span>
+      </div>
+
+      <div class="service-form">
+        <label class="field service-name">
+          <span>Naziv usluge *</span>
+          <input type="text" [(ngModel)]="nazivUSlugeStampe" placeholder="npr. DTG štampa">
+        </label>
+        <label class="field">
+          <span>Dodatna cena / kom. (RSD)</span>
+          <input type="number" min="0" step="1" [(ngModel)]="dodatna_cena_po_komadu">
+        </label>
+        <label class="field">
+          <span>Max širina (mm)</span>
+          <input type="number" min="0" step="1" [(ngModel)]="max_sirina_mm">
+        </label>
+        <label class="field">
+          <span>Max visina (mm)</span>
+          <input type="number" min="0" step="1" [(ngModel)]="max_visina_mm">
+        </label>
+        <button class="add-button service-add" type="button" (click)="dodajUsluguStampanja()">+ Dodaj uslugu</button>
+      </div>
+
+      @if(usluge_stampe.length > 0){
+        <div class="services-list">
+          @for(usluga of usluge_stampe; track $index){
+            <article class="service-card">
+              <span class="service-number">0{{$index + 1}}</span>
+              <div class="service-copy">
+                <strong>{{usluga.naziv}}</strong>
+                <p>+ {{usluga.dodatna_cena_po_komadu}} RSD / kom · max {{usluga.max_sirina_mm}} × {{usluga.max_visina_mm}} mm</p>
+              </div>
+              <button type="button" class="remove-button" (click)="usluge_stampe.splice($index, 1)">Ukloni</button>
+            </article>
+          }
+        </div>
+      }
+      @else{
+        <div class="soft-empty">Još nije dodata nijedna usluga štampe.</div>
+      }
+    </section>
+
+    <div class="page-actions">
+      <button class="ghost-button" type="button" (click)="ponistiUnos()">Poništi unos</button>
+      <button class="secondary-button" type="button" (click)="odustaniOdProizvoda()">Odustani</button>
+      <button class="primary-button" type="button" (click)="kreirajProizvod()">Kreiraj proizvod →</button>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>

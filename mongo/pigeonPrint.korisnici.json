@@ -1,0 +1,185 @@
+[{
+  "_id": {
+    "$oid": "6a98562382dab800bcbcc7e5"
+  },
+  "korisnicko_ime": "jennieRubyJane",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "ime": "Dzeni",
+  "prezime": "Kim",
+  "telefon": "0601234577",
+  "mejl": "example@example",
+  "profilna": "1789166166780-d13680a43097b905bb3a33ea9f6b6f2c (1).jpg",
+  "tip": "klijent",
+  "podtip": "fizicko_lice",
+  "odobren": true,
+  "naziv_institucije": null,
+  "adresa_sedista": "",
+  "grad": "",
+  "maticni_broj": "",
+  "pib": ""
+},
+{
+  "_id": {
+    "$oid": "6a98564782dab800bcbcc7e6"
+  },
+  "korisnicko_ime": "rosesAreRosie",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "ime": "Rozi",
+  "prezime": "Park",
+  "telefon": "0611234567",
+  "mejl": "example@example",
+  "profilna": "1789166253130-6081e8293da33aaee9b18a590e5b6ab4 (1).jpg",
+  "tip": "klijent",
+  "podtip": "pravno_lice",
+  "odobren": true,
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "adresa_sedista": "Topolska 18",
+  "grad": "Beograd",
+  "maticni_broj": "00000001",
+  "pib": "123456789"
+},
+{
+  "_id": {
+    "$oid": "6a98583482dab800bcbcc7e7"
+  },
+  "korisnicko_ime": "fallenAngel",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "ime": "Rubi",
+  "prezime": "Blek",
+  "telefon": "0631234567",
+  "mejl": "example@example",
+  "profilna": "pigeon2.png",
+  "tip": "stampar",
+  "podtip": null,
+  "odobren": true,
+  "naziv_institucije": "Odd Atellier",
+  "adresa_sedista": "Zmaj Jovina 1",
+  "grad": "Novi Sad",
+  "maticni_broj": "23456781",
+  "pib": "234567891"
+},
+{
+  "_id": {
+    "$oid": "6a985ccb82dab800bcbcc7e8"
+  },
+  "korisnicko_ime": "chiefPigeon",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "ime": "Olivija",
+  "prezime": "Rodrigo",
+  "telefon": null,
+  "mejl": null,
+  "profilna": null,
+  "tip": "admin",
+  "podtip": null,
+  "odobren": true,
+  "naziv_institucije": null,
+  "adresa_sedista": null,
+  "grad": null,
+  "maticni_broj": null,
+  "pib": null
+},
+{
+  "_id": {
+    "$oid": "6a9ca02a7b2dce30859f3ef1"
+  },
+  "ime": "Belatriks",
+  "prezime": "Lestrejndz",
+  "korisnicko_ime": "laBellaDona",
+  "lozinka": "$2b$10$W8Vlpewdcr8AIykkZ8/lpOcnls.ewRjx/Az/ZDn33brV9UuyQyVye",
+  "mejl": "example@example",
+  "adresa_sedista": null,
+  "grad": null,
+  "telefon": "066222333",
+  "podtip": "fizicko_lice",
+  "tip": "klijent",
+  "pib": null,
+  "odobren": false,
+  "profilna": "1788649514773-bella.jpg",
+  "naziv_institucije": null,
+  "maticni_broj": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a9da8747b2dce30859f3f45"
+  },
+  "ime": "Tejlor",
+  "prezime": "Svift",
+  "korisnicko_ime": "missAmericana",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "mejl": "example@example",
+  "adresa_sedista": "Gradski park 1",
+  "grad": "Beograd",
+  "telefon": "067888999",
+  "podtip": "",
+  "tip": "stampar",
+  "pib": "999999999",
+  "odobren": true,
+  "profilna": "1788717172367-Capture.png",
+  "naziv_institucije": "The Tortured Poets Department",
+  "maticni_broj": "99999999",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a9daa2a7b2dce30859f3f4b"
+  },
+  "ime": "Sabrina",
+  "prezime": "Karpenter",
+  "korisnicko_ime": "shortAndSweet",
+  "lozinka": "$2b$10$6qjhmJ/wwQrzGHEYwvXvb.kRmYvjtmZ7QSlem0DFhvwLK1x5FWfDG",
+  "mejl": "example@example",
+  "adresa_sedista": "Kralja Milana 16",
+  "grad": "Beograd",
+  "telefon": "061222111",
+  "podtip": "",
+  "tip": "stampar",
+  "pib": "777777777",
+  "odobren": true,
+  "profilna": "1788717610327-Capture (1).png",
+  "naziv_institucije": "EVOlution",
+  "maticni_broj": "77777777",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a9daef97b2dce30859f3f57"
+  },
+  "ime": "Narcisa",
+  "prezime": "Melfoj",
+  "korisnicko_ime": "ladyMalfoyBlack",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "mejl": "example@example",
+  "adresa_sedista": "Zahumska 3",
+  "grad": "Beograd",
+  "telefon": "061111111",
+  "podtip": "",
+  "tip": "stampar",
+  "pib": "877700000",
+  "odobren": true,
+  "profilna": "1788718841216-Capture (3).png",
+  "naziv_institucije": "Noble and Most Ancient House of Print",
+  "maticni_broj": "87780000",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a9daff57b2dce30859f3f5d"
+  },
+  "ime": "Hermiona",
+  "prezime": "Greindzer",
+  "korisnicko_ime": "gryffindorPrincess",
+  "lozinka": "$2b$10$Ppaaken1HnbIqIAEVT.DcONNT8S3d14g.qViS9AcpKEgirkSljZOS",
+  "mejl": "example@example",
+  "adresa_sedista": "Zahumska 23",
+  "grad": "Beograd",
+  "telefon": "064555444",
+  "podtip": "",
+  "tip": "stampar",
+  "pib": "874700000",
+  "odobren": true,
+  "profilna": "1788719093144-Capture (4).png",
+  "naziv_institucije": "S.P.E.W association",
+  "maticni_broj": "84480000",
+  "__v": 0
+}]

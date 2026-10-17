@@ -1,0 +1,203 @@
+[{
+  "_id": {
+    "$oid": "6aaa8cf24a6e40b3e1b27660"
+  },
+  "id_nabavke": "1789562098195rosesAreRosie",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "status": "nema pobednika",
+  "datum": {
+    "$date": "2026-09-16T12:34:58.195Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "SLG-001",
+      "nazivProizvoda": "Personalizovana slagalica A4",
+      "boja": "Plava",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 5,
+      "jedinicnaCena": 1200,
+      "dodatnaCenaStampe": 250,
+      "ukupnaCena": 7250,
+      "_id": {
+        "$oid": "6aaa8cf24a6e40b3e1b27661"
+      }
+    },
+    {
+      "sifraProizvoda": "BIL-003",
+      "nazivProizvoda": "Fototapete sa personalizovanim dizajnom",
+      "boja": "Zuta",
+      "tipStampe": "Sito stampa",
+      "kolicina": 3,
+      "jedinicnaCena": 35060,
+      "dodatnaCenaStampe": 2800,
+      "ukupnaCena": 113580,
+      "_id": {
+        "$oid": "6aaa8cf24a6e40b3e1b27662"
+      }
+    }
+  ],
+  "ponude": [],
+  "pobednik": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab0554a8652ea9b83e6ae9e"
+  },
+  "id_nabavke": "TEST-NABAVKA-LADYMALFOY-001",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "status": "zavrsena",
+  "datum": {
+    "$date": "2026-09-20T21:30:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "SLG-001",
+      "nazivProizvoda": "Personalizovana slagalica A4",
+      "boja": "Plava",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 4,
+      "jedinicnaCena": 1200,
+      "dodatnaCenaStampe": 250,
+      "ukupnaCena": 5800
+    },
+    {
+      "sifraProizvoda": "SKT-001",
+      "nazivProizvoda": "Skripta sa koričenjem",
+      "boja": "Crna",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 6,
+      "jedinicnaCena": 1150,
+      "dodatnaCenaStampe": 275,
+      "ukupnaCena": 8550
+    }
+  ],
+  "ponude": [
+    {
+      "iznos": 1230,
+      "korisnicko_ime_stampara": "ladyMalfoyBlack",
+      "_id": {
+        "$oid": "6ab0571979a6868a20c36aa4"
+      }
+    }
+  ],
+  "pobednik": "ladyMalfoyBlack",
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6ab1ad749e489f6f8ad620f6"
+  },
+  "id_nabavke": "1790029172086rosesAreRosie",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "status": "nema pobednika",
+  "datum": {
+    "$date": "2026-09-21T22:19:32.086Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "RUB-003",
+      "nazivProizvoda": "Roll-up Baner 200x100",
+      "boja": "Plava",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 2,
+      "jedinicnaCena": 3560,
+      "dodatnaCenaStampe": 2500,
+      "ukupnaCena": 12120,
+      "_id": {
+        "$oid": "6ab1ad749e489f6f8ad620f7"
+      }
+    },
+    {
+      "sifraProizvoda": "BIL-003",
+      "nazivProizvoda": "Fototapete sa personalizovanim dizajnom",
+      "boja": "Zuta",
+      "tipStampe": "Sito stampa",
+      "kolicina": 2,
+      "jedinicnaCena": 35060,
+      "dodatnaCenaStampe": 2800,
+      "ukupnaCena": 75720,
+      "_id": {
+        "$oid": "6ab1ad749e489f6f8ad620f8"
+      }
+    }
+  ],
+  "ponude": [],
+  "pobednik": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab2ff925c6c12dbb0d806b8"
+  },
+  "id_nabavke": "demo-nabavka-rosie-20260908-001",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "datum": {
+    "$date": "2026-09-08T10:30:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "PST-001",
+      "nazivProizvoda": "Art poster A3",
+      "boja": "Krem",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 6,
+      "jedinicnaCena": 850,
+      "dodatnaCenaStampe": 220,
+      "ukupnaCena": 6420,
+      "status": "u stampi"
+    }
+  ],
+  "status": "zavrsena",
+  "ponude": [
+    {
+      "iznos": 6100,
+      "korisnicko_ime_stampara": "ladyMalfoyBlack"
+    },
+    {
+      "iznos": 5700,
+      "korisnicko_ime_stampara": "shortAndSweet"
+    }
+  ],
+  "pobednik": "shortAndSweet"
+},
+{
+  "_id": {
+    "$oid": "6ab2ff925c6c12dbb0d806b9"
+  },
+  "id_nabavke": "demo-nabavka-rosie-20260910-002",
+  "korisnicko_ime_klijenta": "rosesAreRosie",
+  "naziv_institucije": "BlackPink Consulting d.o.o.",
+  "datum": {
+    "$date": "2026-09-10T11:48:00.000Z"
+  },
+  "stavke": [
+    {
+      "sifraProizvoda": "BIL-001",
+      "nazivProizvoda": "Bilbord sa personalizovanim dizajnom",
+      "boja": "Bela",
+      "tipStampe": "Digitalna stampa",
+      "kolicina": 3,
+      "jedinicnaCena": 24000,
+      "dodatnaCenaStampe": 2500,
+      "ukupnaCena": 79500,
+      "status": "u stampi"
+    }
+  ],
+  "status": "zavrsena",
+  "ponude": [
+    {
+      "iznos": 81000,
+      "korisnicko_ime_stampara": "gryffindorPrincess"
+    },
+    {
+      "iznos": 79500,
+      "korisnicko_ime_stampara": "ladyMalfoyBlack"
+    }
+  ],
+  "pobednik": "ladyMalfoyBlack"
+}]

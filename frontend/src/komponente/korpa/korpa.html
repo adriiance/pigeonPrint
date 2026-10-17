@@ -1,0 +1,101 @@
+<div class="cart-page">
+  <header class="site-header">
+    <button class="brand" type="button" (click)="nazadNaProizvode()">
+      <span class="brand-mark">P</span>
+      <span class="brand-copy">
+        <span class="brand-name">PigeonPrint</span>
+        <span class="brand-tagline">small prints, bigger stories</span>
+      </span>
+    </button>
+    <button class="back-link" type="button" style="cursor:pointer ;"  (click)="nazadNaProizvode()">← Nastavi kupovinu</button>
+  </header>
+
+  <main class="cart-shell">
+    <section class="cart-heading">
+      <div>
+        <span class="kicker">YOUR PIGEON POST</span>
+        <h1>E-korpa</h1>
+        <p>Ovde su svi proizvodi koje si pripremila za trenutnu porudžbinu, uredno složeni po štamparijama.</p>
+      </div>
+      @if(stavke.length>0){
+        <div class="cart-count">
+          <strong>{{ukupnoKomada()}}</strong>
+          <span>komada u korpi</span>
+        </div>
+      }
+    </section>
+
+    @if(stavke.length===0){
+      <section class="empty-cart">
+        <div class="empty-stamp">EMPTY<br>CART</div>
+        <div>
+          <h2>{{poruka}}</h2>
+          <p>Golub trenutno nema šta da nosi. Vrati se na proizvode i pronađi nešto lepo za štampu.</p>
+          <button type="button" (click)="nazadNaProizvode()">Pogledaj proizvode →</button>
+        </div>
+        <div class="empty-pigeon" aria-hidden="true"></div>
+      </section>
+    } @else {
+      <div class="cart-layout">
+        <section class="groups-column">
+          @for(grupa of grupe; track grupa.korisnicko_ime_stampara){
+            <section class="printer-section">
+              <div class="printer-separator">
+                <span class="printer-label">ŠTAMPARIJA</span>
+                <h2>{{grupa.nazivStamparije}}</h2>
+                <span class="printer-line" aria-hidden="true"></span>
+                <strong>{{grupa.ukupno}} RSD</strong>
+              </div>
+
+              <div class="items-list">
+                @for(stavka of grupa.stavke; track $index){
+                  <article class="cart-item">
+                    <div class="item-image">
+                      @if(stavka.glavnaSlika){
+                       <img [src]="putanjaSlike(stavka.glavnaSlika)" [alt]="stavka.nazivProizvoda">
+                      } @else {
+                        <span>PP</span>
+                      }
+                    </div>
+
+                    <div class="item-info">
+                      <span class="product-code">{{stavka.sifraProizvoda}}</span>
+                      <h3>{{stavka.nazivProizvoda}}</h3>
+                      <div class="item-details">
+                        <span><small>Boja</small><strong>{{stavka.boja}}</strong></span>
+                        <span><small>Tip štampe</small><strong>{{stavka.tipStampe}}</strong></span>
+                        <span><small>Količina</small><strong>{{stavka.kolicina}} kom.</strong></span>
+                      </div>
+                    </div>
+
+                    <div class="item-price">
+                      <span>Ukupno</span>
+                      <strong>{{stavka.ukupnaCena}} RSD</strong>
+                      <small>{{stavka.jedinicnaCena}} + {{stavka.dodatnaCenaStampe}} RSD / kom</small>
+                    </div>
+                  </article>
+                }
+              </div>
+            </section>
+          }
+        </section>
+
+        <aside class="order-summary">
+          <span class="summary-kicker">ORDER NOTE</span>
+          <h2>Pregled korpe</h2>
+          <div class="summary-row"><span>Broj stavki</span><strong>{{stavke.length}}</strong></div>
+          <div class="summary-row"><span>Ukupno komada</span><strong>{{ukupnoKomada()}}</strong></div>
+          <div class="summary-row"><span>Štamparije</span><strong>{{grupe.length}}</strong></div>
+          <div class="summary-total"><span>Ukupan iznos</span><strong>{{ukupanIznos()}} RSD</strong></div>
+
+          <button class="confirm-button" type="button" (click)="poruci()">Potvrdi porudžbinu →</button>
+       
+        </aside>
+      </div>
+    }
+  </main>
+    <footer class="site-footer">
+    <span>© 2026 PigeonPrint</span>
+    <span>ink, paper & city pigeons</span>
+  </footer>
+</div>
