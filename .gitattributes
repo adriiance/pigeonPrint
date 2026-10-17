@@ -1,0 +1,7 @@
+# Don't count stylesheets in the language statistics
+*.css linguist-detectable=false
+*.scss linguist-detectable=false
+
+# Don't count copied third-party or generated files
+**/vendor/** linguist-vendored
+**/dist/** linguist-generated
